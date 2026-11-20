@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caso Cal AI — Como Zach (18) vendeu seu app por US$ 100M | Mentes Brilhantes</title>
+  <meta name="description" content="A história completa de Zach e o Cal AI: o jovem de 18 anos que construiu um app de contagem de calorias por foto e vendeu por mais de US$ 100 milhões. Playbook em 3 passos e 12 lições.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FACC15',
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161, 98, 7, 0.08); }
+    html:not(.dark) .bg-primary\/20 { background-color: rgba(161, 98, 7, 0.15); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161, 98, 7, 0.25); }
+    html:not(.dark) .border-primary\/30 { border-color: rgba(161, 98, 7, 0.2); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .hover\:bg-yellow-500:hover { background-color: #ca8a04; }
+    html:not(.dark) .bg-yellow-400 { background-color: #facc15; }
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .text-red-400 { color: #b91c1c; }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5, 150, 105, 0.25); }
+    html:not(.dark) .border-red-500\/30 { border-color: rgba(185, 28, 28, 0.25); }
+    html:not(.dark) .bg-emerald-900\/20 { background-color: rgba(5, 150, 105, 0.06); }
+    html:not(.dark) .bg-red-900\/20 { background-color: rgba(185, 28, 28, 0.06); }
+
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255, 255, 255, 0.95); }
+
+    .lesson-num {
+      background: linear-gradient(135deg, rgba(250, 204, 21, 0.2), rgba(250, 204, 21, 0.05));
+    }
+    html:not(.dark) .lesson-num { background: rgba(161, 98, 7, 0.12); }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- NAVIGATION -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <div class="flex items-center space-x-4">
+          <a href="index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
+            <span class="text-2xl">🏆</span>
+            <span class="font-bold text-lg hidden sm:inline">Mentes Brilhantes</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="index.html" class="text-sky-400 hover:text-sky-300 text-sm font-medium">← Voltar ao curso</a>
+        </div>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="https://inema.vip" target="_blank" class="hidden md:inline-block px-3 py-1.5 rounded-lg text-sm font-semibold text-primary bg-primary/10 hover:bg-primary/20 transition-colors">
+            Comunidade inema.vip
+          </a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="relative overflow-hidden bg-gradient-to-br from-primary/10 via-dark-900 to-dark-800 py-16 sm:py-20 border-b border-dark-600">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="inline-block px-3 py-1 bg-primary/20 text-primary text-xs font-semibold rounded-full mb-6">
+        ESTUDO DE CASO COMPLETO
+      </span>
+      <h1 class="text-4xl sm:text-6xl font-bold mb-6 leading-tight">
+        O caso <span class="text-primary">Cal AI</span>
+      </h1>
+      <p class="text-xl sm:text-2xl text-neutral-300 mb-4 leading-relaxed">
+        Como <strong class="text-neutral-100">Zach, 18 anos</strong>, vendeu seu app de contagem de calorias por mais de <span class="text-primary font-bold">US$ 100 milhões</span>.
+      </p>
+      <p class="text-base sm:text-lg text-neutral-400 mb-10 leading-relaxed max-w-3xl">
+        A história real, sem coachzinho. O playbook em 3 passos. As 12 lições que atravessam o curso inteiro.
+      </p>
+
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-dark-800/60 rounded-xl border border-primary/30 p-5 text-center">
+          <div class="text-3xl sm:text-4xl font-bold text-primary mb-1">$100M+</div>
+          <div class="text-xs text-neutral-400">Valor de aquisição</div>
+        </div>
+        <div class="bg-dark-800/60 rounded-xl border border-primary/30 p-5 text-center">
+          <div class="text-3xl sm:text-4xl font-bold text-primary mb-1">$30M</div>
+          <div class="text-xs text-neutral-400">Receita anual antes da venda</div>
+        </div>
+        <div class="bg-dark-800/60 rounded-xl border border-primary/30 p-5 text-center">
+          <div class="text-3xl sm:text-4xl font-bold text-primary mb-1">1 mês</div>
+          <div class="text-xs text-neutral-400">Para construir o MVP</div>
+        </div>
+        <div class="bg-dark-800/60 rounded-xl border border-primary/30 p-5 text-center">
+          <div class="text-3xl sm:text-4xl font-bold text-primary mb-1">18 anos</div>
+          <div class="text-xs text-neutral-400">Idade do fundador</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+
+    <!-- A HISTÓRIA -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold mb-6 flex items-center space-x-3">
+        <span class="text-primary">01</span>
+        <span>A história</span>
+      </h2>
+      <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 sm:p-8 space-y-4 text-neutral-300 leading-relaxed">
+        <p>
+          Em <strong class="text-neutral-100">dezembro de 2025</strong>, Zach — um americano de 18 anos — vendeu o <strong class="text-primary">Cal AI</strong> ao maior concorrente do mercado por mais de <strong class="text-neutral-100">US$ 100 milhões</strong>.
+        </p>
+        <p>
+          O Cal AI faz uma coisa só: você tira foto da comida e a IA calcula as calorias. É isso. Sem planilhas, sem digitar ingrediente por ingrediente, sem pesar nada.
+        </p>
+        <ul class="space-y-2 pl-4 border-l-2 border-primary/40 list-none">
+          <li>→ Fechou 2025 com <strong class="text-neutral-100">US$ 30M em receita anual</strong></li>
+          <li>→ Bateu <strong class="text-neutral-100">1 milhão de downloads em 3-4 meses</strong></li>
+          <li>→ Gerava <strong class="text-neutral-100">US$ 1M/mês</strong> em receita após 6 meses</li>
+          <li>→ Entrou no top de saúde/fitness da Apple App Store</li>
+          <li>→ Construído com amigos do colegial em <strong class="text-neutral-100">~1 ano</strong>, sem investidores e sem escritório</li>
+        </ul>
+        <p class="text-neutral-400 italic">
+          A ideia não era genial. O My Fitness Pal já existia há mais de 10 anos. O que mudou foi <strong class="text-neutral-100">como</strong> ele construiu, distribuiu e reteve.
+        </p>
+      </div>
+    </section>
+
+    <!-- BACKGROUND -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold mb-6 flex items-center space-x-3">
+        <span class="text-primary">02</span>
+        <span>Quem é Zach</span>
+      </h2>
+      <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 sm:p-8 space-y-4 text-neutral-300 leading-relaxed">
+        <p>
+          Zach <strong class="text-neutral-100">começou a programar aos 7 anos</strong>. A mãe matriculou ele em um coding camp porque o filho era obcecado por video games — melhor canalizar do que brigar.
+        </p>
+        <p>
+          Passou os <strong class="text-neutral-100">11 anos seguintes</strong> fazendo joguinhos e projetos pequenos. Nenhum decolou. Aquilo parecia fracasso, mas era fundação.
+        </p>
+        <p>
+          A ideia do Cal AI nasceu de uma frustração própria: ele tentou usar o My Fitness Pal por 3 dias e desistiu. Era tedioso demais pesar e digitar cada ingrediente. Quando os modelos de IA ficaram acessíveis, a pergunta veio sozinha:
+        </p>
+        <blockquote class="border-l-4 border-primary pl-4 italic text-neutral-100 text-lg my-4">
+          "E se bastasse tirar uma foto?"
+        </blockquote>
+        <p>
+          A equipe: <strong class="text-neutral-100">ele + um amigo do coding camp + um fundador de 23 anos</strong> que já tinha escalado outros 2 apps. Em <strong class="text-neutral-100">maio de 2024</strong>, ~1 mês depois de começar, lançou o MVP. Aperta um botão, tira foto, IA devolve as calorias. Só isso.
+        </p>
+      </div>
+    </section>
+
+    <!-- PLAYBOOK -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold mb-2 flex items-center space-x-3">
+        <span class="text-primary">03</span>
+        <span>O playbook em 3 passos</span>
+      </h2>
+      <p class="text-neutral-400 mb-8">A receita exata que ele aplicou — e que dá para copiar.</p>
+
+      <div class="space-y-6">
+
+        <!-- Passo 1 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="bg-primary/10 border-b border-primary/30 p-5">
+            <div class="flex items-center space-x-3">
+              <span class="lesson-num text-primary font-bold text-xl px-4 py-1 rounded-lg">PASSO 1</span>
+              <h3 class="text-2xl font-bold text-neutral-100">Encontre a ideia (problema primeiro)</h3>
+            </div>
+          </div>
+          <div class="p-6 space-y-3 text-neutral-300 leading-relaxed">
+            <ul class="space-y-3">
+              <li class="flex items-start space-x-3"><span class="text-primary mt-1">▸</span><span>Não comece com produto. Comece com um <strong class="text-neutral-100">problema real e específico que te frustra</strong>.</span></li>
+              <li class="flex items-start space-x-3"><span class="text-primary mt-1">▸</span><span>Olhe para soluções desatualizadas. O My Fitness Pal estava bloated há mais de 10 anos.</span></li>
+              <li class="flex items-start space-x-3"><span class="text-primary mt-1">▸</span><span>Construa a versão <strong class="text-neutral-100">mais simples possível</strong>, no <strong class="text-neutral-100">menor tempo possível</strong>.</span></li>
+              <li class="flex items-start space-x-3"><span class="text-primary mt-1">▸</span><span>Velocidade importa. Cal AI venceu copycats por chegar primeiro.</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Passo 2 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="bg-primary/10 border-b border-primary/30 p-5">
+            <div class="flex items-center space-x-3">
+              <span class="lesson-num text-primary font-bold text-xl px-4 py-1 rounded-lg">PASSO 2</span>
+              <h3 class="text-2xl font-bold text-neutral-100">Marketing (faça as pessoas verem)</h3>
+            </div>
+          </div>
+          <div class="p-6 space-y-3 text-neutral-300 leading-relaxed">
+            <ul class="space-y-3">
+              <li class="flex items-start space-x-3"><span class="text-primary mt-1">▸</span><span>Reinvestiu <strong class="text-neutral-100">quase toda a receita</strong> em marketing.</span></li>
+              <li class="flex items-start space-x-3"><span class="text-primary mt-1">▸</span><span>Estratégia central: influenciadores fitness no TikTok/Instagram, <strong class="text-neutral-100">sem parecer anúncio</strong>.</span></li>
+              <li class="flex items-start space-x-3"><span class="text-primary mt-1">▸</span><span>Mandava <strong class="text-neutral-100">centenas de DMs por dia</strong> para criadores. A maioria não respondia. Volume + iteração.</span></li>
+              <li class="flex items-start space-x-3"><span class="text-primary mt-1">▸</span><span>O criador fazia conteúdo normal e mostrava o app nos <strong class="text-neutral-100">primeiros 15 segundos</strong> (snap → calorias na tela).</span></li>
+              <li class="flex items-start space-x-3"><span class="text-primary mt-1">▸</span><span>Visual instantâneo gerava comentários "que app é esse?". Demanda nascia do próprio vídeo.</span></li>
+              <li class="flex items-start space-x-3"><span class="text-primary mt-1">▸</span><span>Modelo: <strong class="text-neutral-100">20-30 criadores</strong>, valor fixo por pacote de vídeos, liberdade criativa total.</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Passo 3 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="bg-primary/10 border-b border-primary/30 p-5">
+            <div class="flex items-center space-x-3">
+              <span class="lesson-num text-primary font-bold text-xl px-4 py-1 rounded-lg">PASSO 3</span>
+              <h3 class="text-2xl font-bold text-neutral-100">Retenção (receita previsível)</h3>
+            </div>
+          </div>
+          <div class="p-6 space-y-3 text-neutral-300 leading-relaxed">
+            <ul class="space-y-3">
+              <li class="flex items-start space-x-3"><span class="text-primary mt-1">▸</span><span><strong class="text-neutral-100">Funil de onboarding:</strong> perguntas pessoais (peso, meta, motivação) <em>antes</em> da assinatura. Investimento emocional aumenta a conversão.</span></li>
+              <li class="flex items-start space-x-3"><span class="text-primary mt-1">▸</span><span><strong class="text-neutral-100">Experiência sem esforço:</strong> usar o app leva ~5 segundos.</span></li>
+              <li class="flex items-start space-x-3"><span class="text-primary mt-1">▸</span><span><strong class="text-neutral-100">Hábito diário:</strong> streaks, dashboards, health score — razão para voltar todo dia.</span></li>
+              <li class="flex items-start space-x-3"><span class="text-primary mt-1">▸</span><span>Retenção previsível é o que <strong class="text-neutral-100">atrai ofertas de aquisição</strong> de empresas grandes.</span></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- POR QUE FUNCIONOU - 12 LIÇÕES -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold mb-2 flex items-center space-x-3">
+        <span class="text-primary">04</span>
+        <span>Por que funcionou — 12 lições</span>
+      </h2>
+      <p class="text-neutral-400 mb-8">A análise das peças invisíveis que sustentaram o sucesso.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+        <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+          <div class="flex items-center space-x-3 mb-3">
+            <span class="lesson-num text-primary font-bold text-lg w-10 h-10 flex items-center justify-center rounded-lg">01</span>
+            <h3 class="text-lg font-bold text-neutral-100">Resolveu uma dor REAL e específica</h3>
+          </div>
+          <p class="text-neutral-300 text-sm leading-relaxed">Ele mesmo era o cliente. Não era "ideia legal de app" — era "isso me irrita". Quando você sente a dor na pele, sabe exatamente o que cortar e o que preservar no produto.</p>
+        </div>
+
+        <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+          <div class="flex items-center space-x-3 mb-3">
+            <span class="lesson-num text-primary font-bold text-lg w-10 h-10 flex items-center justify-center rounded-lg">02</span>
+            <h3 class="text-lg font-bold text-neutral-100">Atacou um incumbente preguiçoso</h3>
+          </div>
+          <p class="text-neutral-300 text-sm leading-relaxed">My Fitness Pal estava há mais de 10 anos sem inovar. Mercados grandes com líderes desatualizados são oportunidades douradas — a demanda já existe, basta entregar 10x melhor.</p>
+        </div>
+
+        <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+          <div class="flex items-center space-x-3 mb-3">
+            <span class="lesson-num text-primary font-bold text-lg w-10 h-10 flex items-center justify-center rounded-lg">03</span>
+            <h3 class="text-lg font-bold text-neutral-100">IA como diferencial central, não recurso</h3>
+          </div>
+          <p class="text-neutral-300 text-sm leading-relaxed">Foto-para-calorias só é possível com IA moderna. Não era "app comum + IA por cima". Era "produto que só existe por causa da IA". Diferença enorme.</p>
+        </div>
+
+        <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+          <div class="flex items-center space-x-3 mb-3">
+            <span class="lesson-num text-primary font-bold text-lg w-10 h-10 flex items-center justify-center rounded-lg">04</span>
+            <h3 class="text-lg font-bold text-neutral-100">MVP brutalmente simples</h3>
+          </div>
+          <p class="text-neutral-300 text-sm leading-relaxed">Lançou em 1 mês com UMA função: foto → calorias. Não tentou competir em features. Competiu em UX e velocidade. Simplicidade vence complexidade quando a dor está clara.</p>
+        </div>
+
+        <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+          <div class="flex items-center space-x-3 mb-3">
+            <span class="lesson-num text-primary font-bold text-lg w-10 h-10 flex items-center justify-center rounded-lg">05</span>
+            <h3 class="text-lg font-bold text-neutral-100">Velocidade como vantagem competitiva</h3>
+          </div>
+          <p class="text-neutral-300 text-sm leading-relaxed">"Outras pessoas têm a mesma ideia." Cal AI teve dezenas de copycats — venceu porque entrou primeiro e capitalizou o head start. Em IA, a janela de vantagem é curtíssima.</p>
+        </div>
+
+        <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+          <div class="flex items-center space-x-3 mb-3">
+            <span class="lesson-num text-primary font-bold text-lg w-10 h-10 flex items-center justify-center rounded-lg">06</span>
+            <h3 class="text-lg font-bold text-neutral-100">Marketing &gt; Produto</h3>
+          </div>
+          <p class="text-neutral-300 text-sm leading-relaxed italic">"App perfeito + marketing ruim = zero downloads. App ruim + marketing ótimo = ganha dinheiro." — Zach. Construir é só 20% do trabalho. Distribuição é 80%.</p>
+        </div>
+
+        <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+          <div class="flex items-center space-x-3 mb-3">
+            <span class="lesson-num text-primary font-bold text-lg w-10 h-10 flex items-center justify-center rounded-lg">07</span>
+            <h3 class="text-lg font-bold text-neutral-100">Marketing nativo, não publicitário</h3>
+          </div>
+          <p class="text-neutral-300 text-sm leading-relaxed">O cérebro filtra anúncios. Conteúdo de criador que você já segue vira recomendação de amigo. Mostrar o produto no fluxo natural, nos 15 primeiros segundos, foi o segredo.</p>
+        </div>
+
+        <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+          <div class="flex items-center space-x-3 mb-3">
+            <span class="lesson-num text-primary font-bold text-lg w-10 h-10 flex items-center justify-center rounded-lg">08</span>
+            <h3 class="text-lg font-bold text-neutral-100">Persistência operacional</h3>
+          </div>
+          <p class="text-neutral-300 text-sm leading-relaxed">Centenas de DMs por dia. A maioria não respondia. Não é mágica — é trabalho braçal de prospecção em escala. Volume + iteração até achar criadores que convertem.</p>
+        </div>
+
+        <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+          <div class="flex items-center space-x-3 mb-3">
+            <span class="lesson-num text-primary font-bold text-lg w-10 h-10 flex items-center justify-center rounded-lg">09</span>
+            <h3 class="text-lg font-bold text-neutral-100">Onboarding psicológico</h3>
+          </div>
+          <p class="text-neutral-300 text-sm leading-relaxed">As perguntas pessoais antes do paywall não coletam dados — criam investimento emocional. Quem responde 10 perguntas sobre seus objetivos já está psicologicamente comprado antes de ver o preço.</p>
+        </div>
+
+        <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+          <div class="flex items-center space-x-3 mb-3">
+            <span class="lesson-num text-primary font-bold text-lg w-10 h-10 flex items-center justify-center rounded-lg">10</span>
+            <h3 class="text-lg font-bold text-neutral-100">Retenção é o que vale uma aquisição</h3>
+          </div>
+          <p class="text-neutral-300 text-sm leading-relaxed">Os US$ 100M não vieram de downloads, vieram de receita previsível. Empresas pagam premium por usuários que ficam. Streaks, dashboards e health score são âncoras de hábito.</p>
+        </div>
+
+        <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+          <div class="flex items-center space-x-3 mb-3">
+            <span class="lesson-num text-primary font-bold text-lg w-10 h-10 flex items-center justify-center rounded-lg">11</span>
+            <h3 class="text-lg font-bold text-neutral-100">Habilidade pré-existente acelerou tudo</h3>
+          </div>
+          <p class="text-neutral-300 text-sm leading-relaxed">Zach já programava há 11 anos. Os "anos perdidos" fazendo joguinhos foram fundação invisível. Hoje vibe coding (Lovable, Bolt, Claude Code) reduz a barreira — mas pensamento de produto continua diferencial.</p>
+        </div>
+
+        <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+          <div class="flex items-center space-x-3 mb-3">
+            <span class="lesson-num text-primary font-bold text-lg w-10 h-10 flex items-center justify-center rounded-lg">12</span>
+            <h3 class="text-lg font-bold text-neutral-100">A janela está aberta AGORA</h3>
+          </div>
+          <p class="text-neutral-300 text-sm leading-relaxed">Em 2026 as ferramentas estão melhores que quando Zach começou. A barreira técnica caiu. Mas mais gente está construindo — vantagem é para quem age rápido, não para quem planeja muito.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- RESUMO 3 LIÇÕES -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold mb-2 flex items-center space-x-3">
+        <span class="text-primary">05</span>
+        <span>Resumo: as 3 lições centrais</span>
+      </h2>
+      <p class="text-neutral-400 mb-8">Se você só puder lembrar de três coisas, lembre destas.</p>
+
+      <div class="space-y-4">
+        <div class="bg-gradient-to-br from-primary/10 via-dark-800 to-dark-800 rounded-xl border border-primary/30 p-6">
+          <div class="flex items-start space-x-4">
+            <span class="text-4xl font-bold text-primary leading-none">1</span>
+            <div>
+              <h3 class="text-xl font-bold text-neutral-100 mb-1">Comece pela dor que você mesmo sente</h3>
+              <p class="text-neutral-300">Produto bom é solução de dor real, não ideia legal.</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-gradient-to-br from-primary/10 via-dark-800 to-dark-800 rounded-xl border border-primary/30 p-6">
+          <div class="flex items-start space-x-4">
+            <span class="text-4xl font-bold text-primary leading-none">2</span>
+            <div>
+              <h3 class="text-xl font-bold text-neutral-100 mb-1">Distribuição vence produto</h3>
+              <p class="text-neutral-300">Marketing nativo via criadores, não anúncios tradicionais.</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-gradient-to-br from-primary/10 via-dark-800 to-dark-800 rounded-xl border border-primary/30 p-6">
+          <div class="flex items-start space-x-4">
+            <span class="text-4xl font-bold text-primary leading-none">3</span>
+            <div>
+              <h3 class="text-xl font-bold text-neutral-100 mb-1">Retenção é o ativo</h3>
+              <p class="text-neutral-300">Onboarding psicológico + experiência sem fricção + hábitos diários é o que cria valor de aquisição.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section>
+      <div class="bg-gradient-to-br from-primary/20 via-dark-800 to-dark-800 rounded-2xl border border-primary/40 p-8 sm:p-12 text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Agora é com você.</h2>
+        <p class="text-lg text-neutral-300 mb-8 max-w-2xl mx-auto">
+          Esse caso atravessa o curso inteiro. Comece pela Trilha 1 e descubra o que Zach fez certo — e o que você está fazendo errado.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="curso/trilha1/index.html" class="px-8 py-4 bg-primary text-dark-900 rounded-lg font-bold hover:bg-yellow-300 transition-colors">
+            Começar Trilha 1 →
+          </a>
+          <a href="index.html" class="px-8 py-4 bg-dark-700 border border-dark-600 text-neutral-100 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
+            ← Voltar ao curso
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-dark-600 py-8 mt-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+      <p class="mb-2">Mentes Brilhantes • A Fórmula 1-20-79 • 2026</p>
+      <p>
+        Feito por
+        <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a>
+        •
+        <a href="https://inema.vip" target="_blank" class="text-primary hover:text-yellow-300">Comunidade inema.vip</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const html = document.documentElement;
+
+    if (localStorage.getItem('theme') === 'light') {
+      html.classList.remove('dark');
+      themeToggleDarkIcon.classList.remove('hidden');
+    } else {
+      themeToggleLightIcon.classList.remove('hidden');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+
+</body>
+</html>

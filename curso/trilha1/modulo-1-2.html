@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1.2 A Lei do 1-20-79 | Mentes Brilhantes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5, 150, 105, 0.12); }
+    html:not(.dark) .bg-emerald-500\/10 { background-color: rgba(5, 150, 105, 0.08); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5, 150, 105, 0.25); }
+    html:not(.dark) .bg-emerald-600 { background-color: #059669; }
+    html:not(.dark) .hover\:bg-emerald-500:hover { background-color: #059669; }
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161, 98, 7, 0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161, 98, 7, 0.25); }
+    html:not(.dark) .border-primary\/30 { border-color: rgba(161, 98, 7, 0.2); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .text-red-400 { color: #dc2626; }
+    html:not(.dark) .bg-red-900\/20 { background-color: rgba(220, 38, 38, 0.08); }
+    html:not(.dark) .border-red-500\/30 { border-color: rgba(220, 38, 38, 0.25); }
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .bg-blue-900\/20 { background-color: rgba(37, 99, 235, 0.08); }
+    html:not(.dark) .border-blue-500\/30 { border-color: rgba(37, 99, 235, 0.25); }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255, 255, 255, 0.95); }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
+            <span class="text-2xl">🏆</span>
+            <span class="font-bold text-lg hidden sm:inline">Mentes Brilhantes</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Mentalidade</span></a>
+          <a href="../trilha2/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Ideia</span></a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <div class="flex items-center space-x-2 text-sm text-neutral-400">
+      <a href="../../index.html" class="hover:text-emerald-400">Início</a><span>/</span>
+      <a href="index.html" class="hover:text-emerald-400">Trilha 1</a><span>/</span>
+      <span class="text-emerald-400">Módulo 1.2</span>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1.2</span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">⚖️ A Lei do 1-20-79</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">A matemática brutal por trás de todo negócio bem-sucedido. Por que 90% inverte essa fórmula e quebra. E como Cal AI seguiu ela para vender por US$ 100M.</p>
+      <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">30</div><div class="text-xs text-neutral-400">Minutos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Base</div><div class="text-xs text-neutral-400">Nível</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Conceito</div><div class="text-xs text-neutral-400">Tipo</div></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- TOPICO 1 -->
+    <section class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span>
+        <h2 class="text-2xl font-bold">🧮 A Matemática Brutal</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Toda história de sucesso, quando você tira a maquiagem, segue uma proporção que ninguém ensina:
+        <strong class="text-emerald-400">1% do esforço é a ideia, 20% é construir o produto, 79% é vender e persistir</strong>.
+        Essa não é uma opinião. É um padrão observado em centenas de casos.
+      </p>
+
+      <!-- Ilustração principal: pirâmide -->
+      <div class="bg-dark-800 rounded-xl border border-dark-600 p-8 mb-6">
+        <svg viewBox="0 0 600 360" class="w-full max-w-2xl mx-auto">
+          <!-- Pirâmide invertida -->
+          <polygon points="60,40 540,40 300,340" fill="none" stroke="#FACC15" stroke-width="2"/>
+
+          <!-- Faixa 1% -->
+          <line x1="60" y1="40" x2="540" y2="40" stroke="#FACC15" stroke-width="1" opacity="0.3"/>
+          <line x1="80" y1="80" x2="520" y2="80" stroke="#FACC15" stroke-width="1" opacity="0.3"/>
+          <text x="300" y="65" text-anchor="middle" fill="#FACC15" font-size="14" font-weight="bold">1% — IDEIA</text>
+
+          <!-- Faixa 20% -->
+          <line x1="80" y1="80" x2="520" y2="80" stroke="#FACC15" stroke-width="1" opacity="0.3"/>
+          <line x1="160" y1="180" x2="440" y2="180" stroke="#FACC15" stroke-width="1" opacity="0.3"/>
+          <text x="300" y="135" text-anchor="middle" fill="#FACC15" font-size="16" font-weight="bold">20% — PRODUTO</text>
+
+          <!-- Faixa 79% -->
+          <text x="300" y="240" text-anchor="middle" fill="#FACC15" font-size="22" font-weight="bold">79%</text>
+          <text x="300" y="270" text-anchor="middle" fill="#FACC15" font-size="14" font-weight="bold">VENDA + PERSEVERANÇA</text>
+          <text x="300" y="295" text-anchor="middle" fill="#a3a3a3" font-size="11">Marketing • Distribuição • Retenção</text>
+          <text x="300" y="315" text-anchor="middle" fill="#a3a3a3" font-size="11">Resistir • Iterar • Não desistir</text>
+        </svg>
+        <p class="text-center text-neutral-500 text-sm mt-4">A pirâmide invertida: a base que sustenta tudo é venda e perseverança.</p>
+      </div>
+
+      <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">💡</span> Decompondo cada parte</h3>
+        <ul class="space-y-3 text-neutral-300">
+          <li><strong class="text-primary">1% Ideia:</strong> qualquer pessoa pode ter. Você teve 10 essa semana.</li>
+          <li><strong class="text-primary">20% Produto:</strong> habilidade técnica + tempo. Hoje, com IA, mais barato que nunca.</li>
+          <li><strong class="text-primary">79% Venda + Perseverança:</strong> aqui mora a diferença entre quem vence e quem some.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TOPICO 2 -->
+    <section class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span>
+        <h2 class="text-2xl font-bold">⚠️ A Inversão Que Quebra Negócios</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        O empreendedor médio inverte completamente a fórmula. Gasta meses pensando na ideia perfeita, semanas construindo um produto polido, e depois <strong class="text-red-400">esquece de vender</strong> — ou faz isso de forma tímida e esporádica. Resultado: produto bom, zero clientes.
+      </p>
+
+      <div class="bg-dark-800 rounded-xl border border-dark-600 p-8 mb-6">
+        <h3 class="text-lg font-semibold mb-6 text-center">A inversão silenciosa</h3>
+        <svg viewBox="0 0 600 220" class="w-full max-w-2xl mx-auto">
+          <!-- Lado correto -->
+          <text x="150" y="25" text-anchor="middle" fill="#34d399" font-size="14" font-weight="bold">FÓRMULA CERTA</text>
+          <rect x="50" y="40" width="200" height="20" fill="rgba(52, 211, 153, 0.15)" stroke="#34d399" stroke-width="1"/>
+          <text x="150" y="55" text-anchor="middle" fill="#34d399" font-size="11">Ideia 1%</text>
+          <rect x="50" y="70" width="200" height="40" fill="rgba(52, 211, 153, 0.15)" stroke="#34d399" stroke-width="1"/>
+          <text x="150" y="95" text-anchor="middle" fill="#34d399" font-size="12">Produto 20%</text>
+          <rect x="50" y="120" width="200" height="80" fill="rgba(52, 211, 153, 0.25)" stroke="#34d399" stroke-width="2"/>
+          <text x="150" y="165" text-anchor="middle" fill="#34d399" font-size="14" font-weight="bold">Venda 79%</text>
+
+          <!-- Lado errado -->
+          <text x="450" y="25" text-anchor="middle" fill="#f87171" font-size="14" font-weight="bold">INVERSÃO COMUM</text>
+          <rect x="350" y="40" width="200" height="80" fill="rgba(248, 113, 113, 0.15)" stroke="#f87171" stroke-width="1"/>
+          <text x="450" y="85" text-anchor="middle" fill="#f87171" font-size="14" font-weight="bold">Ideia 79%</text>
+          <text x="450" y="100" text-anchor="middle" fill="#a3a3a3" font-size="10">"esperar a ideia certa"</text>
+          <rect x="350" y="130" width="200" height="40" fill="rgba(248, 113, 113, 0.15)" stroke="#f87171" stroke-width="1"/>
+          <text x="450" y="155" text-anchor="middle" fill="#f87171" font-size="12">Produto 20%</text>
+          <rect x="350" y="180" width="200" height="20" fill="rgba(248, 113, 113, 0.15)" stroke="#f87171" stroke-width="1"/>
+          <text x="450" y="195" text-anchor="middle" fill="#f87171" font-size="11">Venda 1%</text>
+        </svg>
+      </div>
+
+      <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">🪤</span> Por que a inversão acontece</h3>
+        <p class="text-neutral-300 mb-3">
+          Construir é confortável. Pensar é confortável. <strong class="text-red-400">Vender é desconfortável</strong> — exige expor-se, ouvir não, insistir, ser ignorado, parecer chato.
+        </p>
+        <p class="text-neutral-300">
+          Por isso quase todo mundo foge para o conforto. E quase todo mundo quebra.
+        </p>
+      </div>
+    </section>
+
+    <!-- TOPICO 3 -->
+    <section class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span>
+        <h2 class="text-2xl font-bold">📱 Caso Cal AI: O Playbook Completo</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Em dezembro de 2025, um adolescente de 18 anos vendeu seu app de calorias por <strong class="text-primary">mais de US$ 100 milhões</strong>. O caso é o exemplo mais limpo da fórmula 1-20-79 funcionando do começo ao fim.
+      </p>
+
+      <div class="space-y-6 mb-6">
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">1%</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+            <h4 class="font-semibold text-white mb-2">A ideia foi copiada (literalmente)</h4>
+            <p class="text-sm text-neutral-400 mb-3">Já existia há mais de 10 anos no My Fitness Pal</p>
+            <p class="text-neutral-300 text-sm">O fundador desistiu do My Fitness Pal em 3 dias por achar tedioso. Pensou: "e se bastasse tirar uma foto?" — pronto, ideia "pronta". Sem genialidade.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">20%</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+            <h4 class="font-semibold text-white mb-2">Produto: 1 mês, 1 função</h4>
+            <p class="text-sm text-neutral-400 mb-3">MVP brutalmente simples</p>
+            <p class="text-neutral-300 text-sm">Lançou em ~30 dias. UMA função: aperta botão, tira foto, mostra calorias. Sem dashboard, sem social, sem feed. Só o core.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center"><span class="text-primary font-bold">79%</span></div>
+          <div class="flex-1 bg-gradient-to-br from-primary/10 to-dark-800 rounded-xl p-6 border border-primary/30">
+            <h4 class="font-semibold text-white mb-2">Venda: o que ninguém quer fazer</h4>
+            <p class="text-sm text-neutral-400 mb-3">Aqui mora a vitória de US$ 100M</p>
+            <ul class="text-neutral-300 text-sm space-y-2">
+              <li>• <strong class="text-primary">Centenas de DMs por dia</strong> para influencers fitness</li>
+              <li>• Reinvestiu praticamente <strong class="text-primary">100% da receita</strong> em marketing</li>
+              <li>• Estratégia "não-anúncio": creators mostrando uso real nos primeiros 15 segundos</li>
+              <li>• Não parou. Mês após mês. DM atrás de DM. Vídeo atrás de vídeo.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">🎯</span> A Chave da História</h3>
+        <p class="text-neutral-300">
+          Se Cal AI tivesse parado no produto, seria mais um app sumido. O que fez US$ 100 milhões foram os 79% — DMs, criadores, reinvestimento e persistência crua.
+        </p>
+      </div>
+    </section>
+
+    <!-- TOPICO 4 -->
+    <section class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span>
+        <h2 class="text-2xl font-bold">⚰️ Casos Negativos: Produtos Perfeitos Que Morreram</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Para cada Cal AI que vence, existem dezenas de produtos tecnicamente superiores que falharam. Por uma razão simples: <strong class="text-red-400">tinham produto, não tinham distribuição</strong>.
+      </p>
+
+      <div class="space-y-4 mb-6">
+        <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+          <h4 class="font-semibold mb-2 text-red-400">🪦 O padrão que se repete</h4>
+          <p class="text-neutral-300 text-sm">Founders técnicos brilhantes constroem o "melhor produto do mercado." Investem 12-18 meses. Lançam. Esperam que o produto se venda sozinho. Não vende. Tentam vender por 2-3 meses, sem sistema. Desistem. Culpam o mercado.</p>
+        </div>
+
+        <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+          <h4 class="font-semibold mb-2 text-red-400">🪦 Exemplos famosos</h4>
+          <ul class="text-neutral-300 text-sm space-y-1">
+            <li>• <strong>Google+</strong> tinha mais features que o Facebook — perdeu a guerra de distribuição</li>
+            <li>• <strong>Betamax</strong> era tecnicamente superior ao VHS — perdeu o mercado</li>
+            <li>• <strong>Microsoft Zune</strong> chegou depois do iPod com hardware igual — sem distribuição cultural, morreu</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">📊</span> A Lição Dura</h3>
+        <p class="text-neutral-300">
+          Mérito não distribui. Distribuição distribui. Quem chega primeiro nos olhos do mercado vence — mesmo com produto inferior.
+        </p>
+      </div>
+    </section>
+
+    <!-- TOPICO 5 -->
+    <section class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span>
+        <h2 class="text-2xl font-bold">🔍 O Teste do Espelho</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Você acha que está vendendo. Mas <strong class="text-emerald-400">acha</strong> e <strong class="text-emerald-400">faz</strong> são coisas diferentes. Esse exercício revela onde sua energia está indo de verdade.
+      </p>
+
+      <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">📋</span> Auditoria de 7 Dias</h3>
+        <p class="text-neutral-300 mb-4">Por uma semana, anote no fim de cada dia onde foi sua energia:</p>
+
+        <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+          <p class="text-sm text-neutral-300 font-mono">
+            Dia 1: Ideia ___ h | Produto ___ h | Venda ___ h<br>
+            Dia 2: Ideia ___ h | Produto ___ h | Venda ___ h<br>
+            Dia 3: Ideia ___ h | Produto ___ h | Venda ___ h<br>
+            ...<br>
+            <strong class="text-emerald-400">Total da semana</strong>
+          </p>
+        </div>
+
+        <p class="text-neutral-300">
+          Não vale autoengano. "Pesquisar concorrente" é ideia, não venda. "Ajustar landing" é produto, não venda. Venda é falar diretamente com clientes potenciais e pedir compra/feedback.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        <div class="bg-dark-800 rounded-xl border border-dark-600 p-5 text-center">
+          <div class="text-3xl font-bold text-primary mb-2">1%</div>
+          <div class="text-xs text-neutral-400">do tempo em<br><strong class="text-neutral-300">Ideia</strong></div>
+        </div>
+        <div class="bg-dark-800 rounded-xl border border-dark-600 p-5 text-center">
+          <div class="text-3xl font-bold text-primary mb-2">20%</div>
+          <div class="text-xs text-neutral-400">do tempo em<br><strong class="text-neutral-300">Produto</strong></div>
+        </div>
+        <div class="bg-gradient-to-br from-primary/20 to-dark-800 rounded-xl border border-primary/40 p-5 text-center">
+          <div class="text-3xl font-bold text-primary mb-2">79%</div>
+          <div class="text-xs text-neutral-400">do tempo em<br><strong class="text-neutral-300">Venda</strong></div>
+        </div>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">⚡</span> Se inverteu</h3>
+        <p class="text-neutral-300">
+          Se descobriu que está em 70% produto e 10% venda, não desespere — é o padrão. Mas a partir de amanhã, mude. Você não precisa de nova estratégia, só dessa proporção.
+        </p>
+      </div>
+    </section>
+
+    <!-- TOPICO 6 -->
+    <section class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span>
+        <h2 class="text-2xl font-bold">🔺 Pirâmide Invertida — Sua Bússola</h2>
+      </div>
+
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Toda vez que você se perder, voltar a essa imagem. Ela é a bússola do curso inteiro. Quando achar que precisa mudar a ideia, pense: <em>"a base é venda, não ideia"</em>. Quando quiser refazer o produto pela 5ª vez, pense: <em>"a base é venda, não produto"</em>.
+      </p>
+
+      <div class="bg-gradient-to-br from-primary/10 to-dark-800 rounded-xl border border-primary/30 p-8 mb-6">
+        <svg viewBox="0 0 600 280" class="w-full max-w-xl mx-auto">
+          <!-- Topo (1% ideia) -->
+          <polygon points="290,20 310,20 305,55 295,55" fill="#FACC15" opacity="0.4" stroke="#FACC15" stroke-width="2"/>
+          <text x="350" y="42" fill="#FACC15" font-size="13" font-weight="bold">1% — Ideia</text>
+
+          <!-- Meio (20% produto) -->
+          <polygon points="245,55 355,55 330,140 270,140" fill="#FACC15" opacity="0.5" stroke="#FACC15" stroke-width="2"/>
+          <text x="395" y="105" fill="#FACC15" font-size="13" font-weight="bold">20% — Produto</text>
+
+          <!-- Base (79% venda) -->
+          <polygon points="180,140 420,140 365,260 235,260" fill="#FACC15" opacity="0.7" stroke="#FACC15" stroke-width="2"/>
+          <text x="300" y="195" text-anchor="middle" fill="#0a0a0a" font-size="20" font-weight="bold">79%</text>
+          <text x="300" y="215" text-anchor="middle" fill="#0a0a0a" font-size="13" font-weight="bold">VENDA</text>
+          <text x="300" y="235" text-anchor="middle" fill="#0a0a0a" font-size="11">+ Perseverança</text>
+        </svg>
+        <p class="text-center text-neutral-400 mt-4 text-sm">A base é mais larga porque sustenta tudo. Sem a base, a ponta cai.</p>
+      </div>
+
+      <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🧭</span> Como usar essa bússola</h3>
+        <ul class="space-y-2 text-neutral-300">
+          <li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span>Toda vez que estiver travado, pergunte: "estou na base ou na ponta?"</span></li>
+          <li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span>Se está pensando em ideia/produto, mova para venda</span></li>
+          <li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span>A base é onde acontece o resultado real — fique nela</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- RESUMO -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
+        <h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">📌</span> Resumo do Módulo</h2>
+        <div class="space-y-4 mb-8">
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">A fórmula 1-20-79</strong><span class="text-neutral-400"> - 1% ideia, 20% produto, 79% venda</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">A inversão é o erro</strong><span class="text-neutral-400"> - 90% gasta tempo onde não importa</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Cal AI seguiu a fórmula</strong><span class="text-neutral-400"> - ideia copiada, produto simples, venda implacável</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Mérito não distribui</strong><span class="text-neutral-400"> - distribuição distribui</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Faça a auditoria de 7 dias</strong><span class="text-neutral-400"> - veja onde sua energia está</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">A pirâmide é sua bússola</strong><span class="text-neutral-400"> - sempre volte a ela quando travar</span></div></div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+          <h3 class="font-semibold text-emerald-400 mb-2">Próximo Módulo:</h3>
+          <p class="text-neutral-300">1.3 — Destruindo o Perfeccionismo: por que "está quase pronto" geralmente é "estou com medo"</p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="modulo-1-1.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Anterior: 1.1</a>
+          <a href="modulo-1-3.html" class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors">Próximo: 1.3 →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 text-center">
+        <h3 class="text-xl font-bold mb-2">Quer aplicar a fórmula com gente fazendo igual?</h3>
+        <p class="text-neutral-300 mb-4">Na comunidade inema.vip, mentores e alunos comparam suas auditorias 1-20-79 toda semana.</p>
+        <a href="https://inema.vip" target="_blank" class="inline-block px-6 py-3 bg-primary text-dark-900 rounded-lg font-bold hover:bg-yellow-300 transition-colors">Entrar na comunidade inema.vip →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-dark-600 py-8 mt-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+      <p class="mb-2">Mentes Brilhantes • A Fórmula 1-20-79 • 2026</p>
+      <p><a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a> • <a href="https://inema.vip" target="_blank" class="text-primary hover:text-yellow-300">Comunidade inema.vip</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const html = document.documentElement;
+    if (localStorage.getItem('theme') === 'light') { html.classList.remove('dark'); themeToggleDarkIcon.classList.remove('hidden'); }
+    else { themeToggleLightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6.1 Lidando com Cópias | Mentes Brilhantes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; } .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; } html:not(.dark) .bg-dark-900 { background-color: #ffffff; } html:not(.dark) .bg-dark-800 { background-color: #f9fafb; } html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; } html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; } html:not(.dark) .text-neutral-300 { color: #4b5563; } html:not(.dark) .text-neutral-400 { color: #6b7280; } html:not(.dark) .text-neutral-500 { color: #9ca3af; } html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .text-rose-400 { color: #9f1239; } html:not(.dark) .bg-rose-500\/20 { background-color: rgba(225, 29, 72, 0.12); } html:not(.dark) .bg-rose-500\/10 { background-color: rgba(225, 29, 72, 0.08); } html:not(.dark) .border-rose-500\/30 { border-color: rgba(225, 29, 72, 0.25); } html:not(.dark) .bg-rose-600 { background-color: #9f1239; } html:not(.dark) .hover\:bg-rose-500:hover { background-color: #9f1239; }
+    html:not(.dark) .text-emerald-400 { color: #059669; } html:not(.dark) .bg-emerald-900\/20 { background-color: rgba(5, 150, 105, 0.08); } html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5, 150, 105, 0.25); }
+    html:not(.dark) .text-red-400 { color: #dc2626; } html:not(.dark) .bg-red-900\/20 { background-color: rgba(220, 38, 38, 0.08); } html:not(.dark) .border-red-500\/30 { border-color: rgba(220, 38, 38, 0.25); }
+    html:not(.dark) .text-blue-400 { color: #2563eb; } html:not(.dark) .bg-blue-900\/20 { background-color: rgba(37, 99, 235, 0.08); } html:not(.dark) .border-blue-500\/30 { border-color: rgba(37, 99, 235, 0.25); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; } html:not(.dark) .bg-primary\/10 { background-color: rgba(161, 98, 7, 0.08); } html:not(.dark) .border-primary\/30 { border-color: rgba(161, 98, 7, 0.2); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; } html:not(.dark) .text-yellow-400 { color: #a16207; } html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; } html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; } html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255, 255, 255, 0.95); }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-14"><div class="flex items-center space-x-4"><a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300"><span class="text-2xl">🏆</span><span class="font-bold text-lg hidden sm:inline">Mentes Brilhantes</span></a><span class="text-neutral-600">|</span><a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a></div><div class="flex items-center space-x-1 sm:space-x-2"><a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-rose-400 bg-rose-500/10"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Escala</span></a><button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2"><svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg><svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg></button></div></div></div></nav>
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4"><div class="flex items-center space-x-2 text-sm text-neutral-400"><a href="../../index.html" class="hover:text-rose-400">Início</a><span>/</span><a href="index.html" class="hover:text-rose-400">Trilha 6</a><span>/</span><span class="text-rose-400">Módulo 6.1</span></div></nav>
+  <header class="bg-gradient-to-br from-rose-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><span class="inline-block px-3 py-1 bg-rose-500/20 text-rose-400 text-xs font-semibold rounded-full mb-4">MÓDULO 6.1</span><h1 class="text-3xl sm:text-4xl font-bold mb-4">🥷 Lidando com Cópias e Concorrência</h1><p class="text-lg text-neutral-400 max-w-3xl">Cal AI teve dezenas de copycats. Por que velocidade vence segredo. Como manter vantagem quando todo mundo te copia.</p></div></header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <section class="mb-16"><div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">1</span><h2 class="text-2xl font-bold">📋 Cal AI Teve Dezenas de Cópias</h2></div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">Quando o Cal AI virou hit, em 6 meses apareceram dezenas de apps idênticos. Mesma proposta, mesmo design, mesmo método. <strong class="text-rose-400">Cal AI continuou crescendo</strong> e foi vendido por US$ 100M.</p>
+      <div class="bg-gradient-to-br from-rose-900/30 to-dark-800 rounded-xl border border-rose-500/30 p-6 mb-6"><h3 class="text-lg font-semibold text-rose-400 mb-3">⚡ A lição</h3><p class="text-neutral-300 mb-3">Cópia não é o problema que você imagina. Quem chega primeiro e executa, vence.</p><p class="text-neutral-300">A vantagem não é a ideia. É a posição de mercado conquistada antes deles entrarem — e a velocidade de evolução depois.</p></div>
+    </section>
+
+    <section class="mb-16"><div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">2</span><h2 class="text-2xl font-bold">⚡ Velocidade Vence Segredo</h2></div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">Não tente esconder a estratégia. <strong class="text-rose-400">Foque em executar mais rápido</strong> que qualquer cópia consiga acompanhar.</p>
+      <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6"><h3 class="text-lg font-semibold text-blue-400 mb-3">📊 Por que segredo é ilusão</h3><p class="text-neutral-300 mb-3">Concorrente sempre vai descobrir o que você faz. Engenharia reversa, ex-funcionário, observação direta — informação vaza.</p><p class="text-neutral-300">Único diferencial sustentável: velocidade de iteração.</p></div>
+      <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6 mb-6"><h3 class="text-lg font-semibold text-emerald-400 mb-3">✓ Cal AI publicou tudo</h3><p class="text-neutral-300">Fundador deu entrevistas, mostrou estratégia, ensinou método. Mesmo assim, ninguém ultrapassou. Por quê? Porque enquanto cópias gastavam 6 meses replicando, Cal AI já estava 2-3 etapas à frente.</p></div>
+    </section>
+
+    <section class="mb-16"><div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">3</span><h2 class="text-2xl font-bold">🛡️ Mantendo Vantagem Quando Copiam</h2></div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">Vantagem competitiva real: comunidade engajada, brand reconhecido, dados acumulados, parcerias estratégicas. <strong class="text-rose-400">Feature copia em 1 mês. Comunidade não copia.</strong></p>
+      <div class="bg-gradient-to-br from-rose-900/30 to-dark-800 rounded-xl border border-rose-500/30 p-6 mb-6"><h3 class="text-lg font-semibold text-rose-400 mb-3">Os fossos que importam</h3><ul class="space-y-2 text-neutral-300"><li>• <strong>Comunidade:</strong> usuários conversando entre si — anos pra construir</li><li>• <strong>Brand:</strong> reconhecimento mental — anos pra estabelecer</li><li>• <strong>Dados:</strong> uso real → produto melhor → mais uso → ciclo virtuoso</li><li>• <strong>Parcerias:</strong> distribuição exclusiva, integrações estratégicas</li><li>• <strong>Talento:</strong> time forte que cresce junto</li></ul></div>
+      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6"><h3 class="text-lg font-semibold text-primary mb-3">⚡ Foco</h3><p class="text-neutral-300">Acumula no que NÃO pode ser copiado: relacionamentos, identidade, dados de uso real. Esses são seus tesouros longo prazo.</p></div>
+    </section>
+
+    <section class="mb-16"><div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">4</span><h2 class="text-2xl font-bold">📈 Corrida Cumulativa vs Single-Shot</h2></div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">Empreendedorismo é <strong class="text-rose-400">corrida cumulativa</strong>, não tiro único. Cada dia de execução compõe — concorrente que entrou hoje não tem esse acúmulo.</p>
+      <div class="bg-dark-800 rounded-xl border border-dark-600 p-8 mb-6">
+        <svg viewBox="0 0 600 220" class="w-full max-w-2xl mx-auto">
+          <line x1="60" y1="180" x2="540" y2="180" stroke="#4b5563" stroke-width="1"/>
+          <line x1="60" y1="40" x2="60" y2="180" stroke="#4b5563" stroke-width="1"/>
+          <text x="60" y="200" text-anchor="middle" fill="#a3a3a3" font-size="11">Mês 0</text>
+          <text x="300" y="200" text-anchor="middle" fill="#a3a3a3" font-size="11">Mês 12</text>
+          <text x="540" y="200" text-anchor="middle" fill="#a3a3a3" font-size="11">Mês 24</text>
+          <path d="M 60 180 Q 180 170, 300 130 T 540 50" stroke="#fb7185" stroke-width="3" fill="none"/>
+          <text x="540" y="55" fill="#fb7185" font-size="12" font-weight="bold">VOCÊ</text>
+          <path d="M 300 180 Q 360 175, 420 165 T 540 130" stroke="#9ca3af" stroke-width="2" fill="none" stroke-dasharray="4 2"/>
+          <text x="540" y="135" fill="#9ca3af" font-size="11">Cópia</text>
+        </svg>
+        <p class="text-center text-neutral-500 text-sm mt-4">Cópias começam do zero quando você já está em ano 2.</p>
+      </div>
+      <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6 mb-6"><h3 class="text-lg font-semibold text-emerald-400 mb-3">✓ Você está sempre 6-12 meses à frente</h3><p class="text-neutral-300">Em conhecimento operacional, dados, relacionamentos. Mantém esse delta correndo.</p></div>
+    </section>
+
+    <section class="mb-16"><div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">5</span><h2 class="text-2xl font-bold">🪞 Quando o Copycat É Melhor</h2></div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">Honestidade brutal: <strong class="text-rose-400">às vezes o copycat é melhor que você</strong>. Tem orçamento maior, time mais experiente, ou identifica algo que você não viu.</p>
+      <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6"><h3 class="text-lg font-semibold text-blue-400 mb-3">📊 Como reagir</h3><p class="text-neutral-300 mb-3">Se uma cópia está performando melhor, é hora de <strong class="text-blue-400">aprender com ela</strong>, não negar.</p><ul class="space-y-2 text-neutral-300 text-sm"><li>• Estuda o que eles fizeram diferente</li><li>• Adota o que funciona</li><li>• Mantém o que você tem de único</li><li>• Acelera o que estava lento</li></ul></div>
+      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6"><h3 class="text-lg font-semibold text-primary mb-3">⚡ Sem orgulho</h3><p class="text-neutral-300">Orgulho mata empresas. Reconhecer onde está sendo superado é primeiro passo pra reagir. Founder bom é founder humilde com dados.</p></div>
+    </section>
+
+    <section class="mb-16"><div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">6</span><h2 class="text-2xl font-bold">🎯 Foco Como Vantagem Competitiva</h2></div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">A pior coisa quando aparece concorrência é <strong class="text-red-400">distração</strong>. Pessoa começa a olhar pro lado, perde execução.</p>
+      <div class="bg-gradient-to-br from-rose-900/30 to-dark-800 rounded-xl border border-rose-500/30 p-6 mb-6"><h3 class="text-lg font-semibold text-rose-400 mb-3">A regra 80/20</h3><ul class="space-y-2 text-neutral-300"><li>• <strong class="text-rose-400">80% do tempo</strong> no que você está construindo (seu produto, seus clientes)</li><li>• <strong class="text-rose-400">20% do tempo</strong> observando o mercado e concorrência</li></ul></div>
+      <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6 mb-6"><h3 class="text-lg font-semibold text-emerald-400 mb-3">✓ A frase que ancora</h3><p class="text-neutral-300 italic">"Se você olha tanto pro vizinho, perde sua estrada."</p><p class="text-neutral-300 mt-3">Fica no seu, melhora seu, lança seu. O resto cuida sozinho.</p></div>
+    </section>
+
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-rose-900/40 via-dark-800 to-dark-800 rounded-xl border border-rose-500/30 p-8">
+        <h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">📌</span> Resumo</h2>
+        <div class="space-y-4 mb-8">
+          <div class="flex items-start space-x-3"><span class="text-rose-400 mt-1">✓</span><div><strong class="text-white">Cal AI sobreviveu a dezenas de cópias</strong></div></div>
+          <div class="flex items-start space-x-3"><span class="text-rose-400 mt-1">✓</span><div><strong class="text-white">Velocidade vence segredo</strong></div></div>
+          <div class="flex items-start space-x-3"><span class="text-rose-400 mt-1">✓</span><div><strong class="text-white">Acumule no que não pode ser copiado</strong><span class="text-neutral-400"> - comunidade, brand, dados</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-rose-400 mt-1">✓</span><div><strong class="text-white">Você está 6-12 meses à frente</strong><span class="text-neutral-400"> - mantém o ritmo</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-rose-400 mt-1">✓</span><div><strong class="text-white">Aprenda com copycats melhores</strong><span class="text-neutral-400"> - sem orgulho</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-rose-400 mt-1">✓</span><div><strong class="text-white">Foco 80/20</strong><span class="text-neutral-400"> - você &gt; eles</span></div></div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-4 mb-8"><h3 class="font-semibold text-rose-400 mb-2">Próximo:</h3><p class="text-neutral-300">6.2 — A Realidade do Plateau</p></div>
+        <div class="flex flex-col sm:flex-row gap-4"><a href="index.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Trilha</a><a href="modulo-6-2.html" class="flex-1 text-center px-6 py-3 bg-rose-600 text-white rounded-lg font-semibold hover:bg-rose-500 transition-colors">Próximo: 6.2 →</a></div>
+      </div>
+    </section>
+
+    <section class="mb-12"><div class="bg-primary/10 rounded-xl border border-primary/30 p-6 text-center"><h3 class="text-xl font-bold mb-2">Apareceu cópia do seu produto?</h3><p class="text-neutral-300 mb-4">Posta na inema.vip. Galera já passou por isso e te ajuda a navegar.</p><a href="https://inema.vip" target="_blank" class="inline-block px-6 py-3 bg-primary text-dark-900 rounded-lg font-bold hover:bg-yellow-300 transition-colors">Entrar na comunidade inema.vip →</a></div></section>
+  </main>
+
+  <footer class="border-t border-dark-600 py-8 mt-16"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p class="mb-2">Mentes Brilhantes • A Fórmula 1-20-79 • 2026</p><p><a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a> • <a href="https://inema.vip" target="_blank" class="text-primary hover:text-yellow-300">Comunidade inema.vip</a></p></div></footer>
+  <script>const themeToggle = document.getElementById('theme-toggle'); const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon'); const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon'); const html = document.documentElement; if (localStorage.getItem('theme') === 'light') { html.classList.remove('dark'); themeToggleDarkIcon.classList.remove('hidden'); } else { themeToggleLightIcon.classList.remove('hidden'); } themeToggle.addEventListener('click', () => { themeToggleDarkIcon.classList.toggle('hidden'); themeToggleLightIcon.classList.toggle('hidden'); html.classList.toggle('dark'); localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light'); });</script>
+</body>
+</html>

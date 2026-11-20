@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2.3 A Frase de 1 Linha | Mentes Brilhantes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37, 99, 235, 0.12); }
+    html:not(.dark) .bg-blue-500\/10 { background-color: rgba(37, 99, 235, 0.08); }
+    html:not(.dark) .border-blue-500\/30 { border-color: rgba(37, 99, 235, 0.25); }
+    html:not(.dark) .bg-blue-600 { background-color: #2563eb; }
+    html:not(.dark) .hover\:bg-blue-500:hover { background-color: #2563eb; }
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .bg-emerald-900\/20 { background-color: rgba(5, 150, 105, 0.08); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5, 150, 105, 0.25); }
+    html:not(.dark) .text-red-400 { color: #dc2626; }
+    html:not(.dark) .bg-red-900\/20 { background-color: rgba(220, 38, 38, 0.08); }
+    html:not(.dark) .border-red-500\/30 { border-color: rgba(220, 38, 38, 0.25); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161, 98, 7, 0.08); }
+    html:not(.dark) .border-primary\/30 { border-color: rgba(161, 98, 7, 0.2); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255, 255, 255, 0.95); }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300"><span class="text-2xl">🏆</span><span class="font-bold text-lg hidden sm:inline">Mentes Brilhantes</span></a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha1/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 transition-colors"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Mentalidade</span></a>
+          <a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Ideia</span></a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <div class="flex items-center space-x-2 text-sm text-neutral-400">
+      <a href="../../index.html" class="hover:text-blue-400">Início</a><span>/</span>
+      <a href="index.html" class="hover:text-blue-400">Trilha 2</a><span>/</span>
+      <span class="text-blue-400">Módulo 2.3</span>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MÓDULO 2.3</span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">📝 A Frase de 1 Linha</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">Sua ideia em uma frase só. Se não cabe em uma linha, ainda está confusa. Aqui você cristaliza tudo: dor + público + pagamento.</p>
+      <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">6</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">30</div><div class="text-xs text-neutral-400">Minutos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Base</div><div class="text-xs text-neutral-400">Nível</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Síntese</div><div class="text-xs text-neutral-400">Tipo</div></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- TOPICO 1 -->
+    <section class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">1</span>
+        <h2 class="text-2xl font-bold">🎯 A Fórmula: X Dor para Y Pessoa que Paga Z</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">Tem uma fórmula que cristaliza qualquer ideia em uma linha clara: <strong class="text-blue-400">"Eu resolvo [X dor específica] para [Y pessoa específica] que paga [Z preço/forma]"</strong>. Parece simples — e é. Mas força a clareza brutal.</p>
+
+      <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">📐</span> A estrutura</h3>
+        <div class="space-y-4 text-neutral-300">
+          <div>
+            <p class="text-blue-400 font-semibold mb-1">X = Dor específica</p>
+            <p class="text-sm">Não vale "ajudo a vender mais." Vale "elimino 3 horas semanais de trabalho manual em conciliação bancária."</p>
+          </div>
+          <div>
+            <p class="text-blue-400 font-semibold mb-1">Y = Pessoa específica</p>
+            <p class="text-sm">Não vale "empreendedores." Vale "donos de e-commerce de R$ 50k-500k/mês de faturamento."</p>
+          </div>
+          <div>
+            <p class="text-blue-400 font-semibold mb-1">Z = Preço/forma</p>
+            <p class="text-sm">Não vale "modelo SaaS." Vale "R$ 297/mês via assinatura mensal cancelável."</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+        <h3 class="text-lg font-semibold mb-3 text-emerald-400">✓ Exemplo: Cal AI</h3>
+        <p class="text-neutral-300 italic">"Resolvo a chatice de pesar e digitar comida para quem quer perder peso, que paga US$ 30/ano via assinatura."</p>
+        <p class="text-neutral-500 text-sm mt-2">Dor clara. Público claro. Pagamento claro. Por isso virou US$ 100M+.</p>
+      </div>
+    </section>
+
+    <!-- TOPICO 2 -->
+    <section class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">2</span>
+        <h2 class="text-2xl font-bold">📏 Se Não Cabe, Não É Ideia</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">Princípio brutal: <strong class="text-red-400">se você precisa de 3 parágrafos para explicar sua ideia, o que você tem é confusão, não ideia</strong>. E confusão na frase = confusão no produto = confusão na venda = zero cliente.</p>
+
+      <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">⏱️</span> A regra dos 10 segundos</h3>
+        <p class="text-neutral-300">O cliente decide em 10 segundos se quer entender mais sobre seu produto. Se sua frase de 1 linha precisa de outra explicação, você já perdeu.</p>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">⚡</span> Teste do Elevator</h3>
+        <p class="text-neutral-300">Imagina você no elevador com um investidor. Tem 30 segundos. Sua frase precisa caber e ser clara — sem o investidor pedir esclarecimento. Se ele pergunta "como assim?", a frase falhou.</p>
+      </div>
+    </section>
+
+    <!-- TOPICO 3 -->
+    <section class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">3</span>
+        <h2 class="text-2xl font-bold">🏢 20 Empresas em 1 Frase</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">Calibrar seu padrão é mais fácil quando você vê bons exemplos. Aqui estão 20 empresas conhecidas, todas resumidas em 1 frase usando a fórmula. Note como cada uma é específica.</p>
+
+      <div class="space-y-3 mb-6">
+        <div class="bg-dark-800 rounded-xl border border-dark-600 p-4">
+          <p class="text-blue-400 font-semibold text-sm mb-1">Uber</p>
+          <p class="text-neutral-300 text-sm">Conecta motoristas e passageiros via app, sem espera de táxi, com pagamento automático.</p>
+        </div>
+        <div class="bg-dark-800 rounded-xl border border-dark-600 p-4">
+          <p class="text-blue-400 font-semibold text-sm mb-1">Airbnb</p>
+          <p class="text-neutral-300 text-sm">Permite alugar quartos/casas direto do dono, mais barato e local que hotel.</p>
+        </div>
+        <div class="bg-dark-800 rounded-xl border border-dark-600 p-4">
+          <p class="text-blue-400 font-semibold text-sm mb-1">Notion</p>
+          <p class="text-neutral-300 text-sm">Substitui Word + Excel + Trello em um só workspace para times pequenos, R$ 8/usuário/mês.</p>
+        </div>
+        <div class="bg-dark-800 rounded-xl border border-dark-600 p-4">
+          <p class="text-blue-400 font-semibold text-sm mb-1">iFood</p>
+          <p class="text-neutral-300 text-sm">Comida de restaurante na casa em 30min para quem não quer cozinhar, com taxa de entrega.</p>
+        </div>
+        <div class="bg-dark-800 rounded-xl border border-dark-600 p-4">
+          <p class="text-blue-400 font-semibold text-sm mb-1">Duolingo</p>
+          <p class="text-neutral-300 text-sm">Aulas de idioma em 5min/dia para quem não tem tempo, gratuito ou Premium R$ 25/mês.</p>
+        </div>
+        <div class="bg-dark-800 rounded-xl border border-dark-600 p-4">
+          <p class="text-blue-400 font-semibold text-sm mb-1">Nubank</p>
+          <p class="text-neutral-300 text-sm">Conta digital sem tarifas para quem odeia banco tradicional.</p>
+        </div>
+        <div class="bg-dark-800 rounded-xl border border-dark-600 p-4">
+          <p class="text-blue-400 font-semibold text-sm mb-1">Spotify</p>
+          <p class="text-neutral-300 text-sm">Música on-demand para quem quer ouvir qualquer faixa, R$ 21/mês.</p>
+        </div>
+        <div class="bg-dark-800 rounded-xl border border-dark-600 p-4">
+          <p class="text-blue-400 font-semibold text-sm mb-1">Stripe</p>
+          <p class="text-neutral-300 text-sm">API de pagamentos para devs que detestam integrar gateway tradicional.</p>
+        </div>
+        <div class="bg-dark-800 rounded-xl border border-dark-600 p-4">
+          <p class="text-blue-400 font-semibold text-sm mb-1">Hotmart</p>
+          <p class="text-neutral-300 text-sm">Plataforma de venda de cursos online para infoprodutores, comissão por venda.</p>
+        </div>
+        <div class="bg-dark-800 rounded-xl border border-dark-600 p-4">
+          <p class="text-blue-400 font-semibold text-sm mb-1">Cal AI</p>
+          <p class="text-neutral-300 text-sm">Foto da comida vira contagem de calorias para quem odeia digitar ingrediente, US$ 30/ano.</p>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">💡</span> O padrão</h3>
+        <p class="text-neutral-300">Note como nenhuma frase usa palavras como "revolucionário", "inovador", "disruptivo." Todas são <strong class="text-blue-400">concretas</strong>: o que faz, para quem, quanto custa. Esse é o padrão.</p>
+      </div>
+    </section>
+
+    <!-- TOPICO 4 -->
+    <section class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">4</span>
+        <h2 class="text-2xl font-bold">⚠️ Os 5 Erros Que Matam a Frase</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">Toda frase ruim cai em pelo menos um desses 5 erros. Reconheça eles na sua antes de mostrar para qualquer um.</p>
+
+      <div class="space-y-4 mb-6">
+        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+          <h4 class="font-bold text-red-400 mb-2">1. Jargão técnico</h4>
+          <p class="text-neutral-300 text-sm mb-2">❌ "Plataforma SaaS multi-tenant que utiliza machine learning generativo para empoderar criadores."</p>
+          <p class="text-neutral-300 text-sm">✓ "Edita seus vídeos do TikTok automaticamente em 30 segundos, R$ 47/mês."</p>
+        </div>
+        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+          <h4 class="font-bold text-red-400 mb-2">2. Público "todo mundo"</h4>
+          <p class="text-neutral-300 text-sm mb-2">❌ "Para empreendedores que querem crescer."</p>
+          <p class="text-neutral-300 text-sm">✓ "Para donos de e-commerce de moda feminina que vendem R$ 50-300k/mês."</p>
+        </div>
+        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+          <h4 class="font-bold text-red-400 mb-2">3. Dor genérica</h4>
+          <p class="text-neutral-300 text-sm mb-2">❌ "Aumenta sua produtividade."</p>
+          <p class="text-neutral-300 text-sm">✓ "Elimina 3 horas semanais que você gasta resumindo reuniões."</p>
+        </div>
+        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+          <h4 class="font-bold text-red-400 mb-2">4. Faltar o pagador</h4>
+          <p class="text-neutral-300 text-sm mb-2">❌ "App grátis para fazer X."</p>
+          <p class="text-neutral-300 text-sm">✓ "App grátis para fazer X, monetizado via [parceria/assinatura premium/comissão]."</p>
+        </div>
+        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+          <h4 class="font-bold text-red-400 mb-2">5. Prometer demais</h4>
+          <p class="text-neutral-300 text-sm mb-2">❌ "Triplica seu faturamento em 30 dias garantido."</p>
+          <p class="text-neutral-300 text-sm">✓ "Acelera respostas de e-mail comercial em 60%, em média."</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOPICO 5 -->
+    <section class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">5</span>
+        <h2 class="text-2xl font-bold">🔁 Iteração: Refinar Até Ficar Afiado</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">Você não acerta a frase de primeira. <strong class="text-blue-400">Ninguém acerta</strong>. O processo é: escreve uma versão, mostra para 5 pessoas, observa onde travam, ajusta, repete.</p>
+
+      <div class="space-y-4 mb-6">
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">1</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+            <h4 class="font-semibold text-white mb-2">Escreve versão 1</h4>
+            <p class="text-neutral-300 text-sm">Não tente fazer perfeita. Solta no papel.</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">2</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+            <h4 class="font-semibold text-white mb-2">Mostra para 5 pessoas</h4>
+            <p class="text-neutral-300 text-sm">Sem explicar nada antes. Só a frase. Observa: entenderam? Ficaram interessados?</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">3</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+            <h4 class="font-semibold text-white mb-2">Anota onde travam</h4>
+            <p class="text-neutral-300 text-sm">"Pra quem é?" → faltou público. "Como assim?" → jargão. "Quanto custa?" → faltou preço.</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">4</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+            <h4 class="font-semibold text-white mb-2">Ajusta e repete</h4>
+            <p class="text-neutral-300 text-sm">5 versões em 1 hora batem 1 versão "perfeita" em 1 mês. Vai iterando.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">🎯</span> Critério final</h3>
+        <p class="text-neutral-300">Pessoa entende em 5 segundos sem você explicar. Se ainda precisa explicar, ainda não está afiada.</p>
+      </div>
+    </section>
+
+    <!-- TOPICO 6 -->
+    <section class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">6</span>
+        <h2 class="text-2xl font-bold">📢 Exercício: Sua Frase Pública</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">Frase que fica na gaveta morre. <strong class="text-blue-400">Frase pública vira identidade</strong> — e identidade gera ação. Esse exercício transforma sua frase em compromisso visível.</p>
+
+      <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">📋</span> Onde publicar</h3>
+        <ul class="space-y-2 text-neutral-300">
+          <li>• <strong>Bio do Instagram:</strong> sua frase como bio principal</li>
+          <li>• <strong>Headline do LinkedIn:</strong> substitua o cargo</li>
+          <li>• <strong>Status do WhatsApp:</strong> visível para todos os contatos</li>
+          <li>• <strong>Bio do X/Twitter:</strong> 160 caracteres direto ao ponto</li>
+          <li>• <strong>Comunidade inema.vip:</strong> peça feedback honesto</li>
+        </ul>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">⚡</span> O que vai acontecer</h3>
+        <p class="text-neutral-300 mb-3">Você vai sentir desconforto — porque agora está se posicionando publicamente. Esse desconforto é exatamente o que você precisa.</p>
+        <p class="text-neutral-300">Pessoas vão começar a te associar com a frase. Vão te indicar quando alguém precisar do que você oferece. Sua identidade pública passa a trabalhar por você 24/7.</p>
+      </div>
+
+      <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-3 flex items-center"><span class="mr-2">✓</span> Compromisso da Trilha 2</h3>
+        <p class="text-neutral-300">Antes de avançar para a Trilha 3 (Produto), você precisa: ter feito 10 conversas, identificado a dor real, e ter sua frase de 1 linha publicada em pelo menos 1 lugar visível.</p>
+      </div>
+    </section>
+
+    <!-- RESUMO -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-blue-900/40 via-dark-800 to-dark-800 rounded-xl border border-blue-500/30 p-8">
+        <h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">📌</span> Resumo do Módulo</h2>
+        <div class="space-y-4 mb-8">
+          <div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Fórmula X-Y-Z</strong><span class="text-neutral-400"> - dor + público + pagamento</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Cabe em 1 linha ou não é ideia</strong><span class="text-neutral-400"> - regra dos 10 segundos</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Estude exemplos reais</strong><span class="text-neutral-400"> - calibre seu padrão</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Evite os 5 erros</strong><span class="text-neutral-400"> - jargão, todo mundo, dor genérica, sem pagador, prometer demais</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Itere até ficar afiado</strong><span class="text-neutral-400"> - 5 versões em 1 hora &gt; 1 versão "perfeita" em 1 mês</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Publique em lugar visível</strong><span class="text-neutral-400"> - frase na gaveta morre</span></div></div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+          <h3 class="font-semibold text-blue-400 mb-2">Trilha 2 completa! Próxima trilha:</h3>
+          <p class="text-neutral-300">Trilha 3 — O Produto (20%): construir pouco, lançar rápido. Vibe coding e a regra dos 30 dias.</p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="modulo-2-2.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Anterior: 2.2</a>
+          <a href="../trilha3/index.html" class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors">Próxima Trilha: 3 →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 text-center">
+        <h3 class="text-xl font-bold mb-2">🎉 Trilha 2 concluída!</h3>
+        <p class="text-neutral-300 mb-4">Você tem ideia validada e frase afiada. Agora vem o produto. Posta sua frase na comunidade — a galera te ajuda a refinar.</p>
+        <a href="https://inema.vip" target="_blank" class="inline-block px-6 py-3 bg-primary text-dark-900 rounded-lg font-bold hover:bg-yellow-300 transition-colors">Entrar na comunidade inema.vip →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-dark-600 py-8 mt-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+      <p class="mb-2">Mentes Brilhantes • A Fórmula 1-20-79 • 2026</p>
+      <p><a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a> • <a href="https://inema.vip" target="_blank" class="text-primary hover:text-yellow-300">Comunidade inema.vip</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const html = document.documentElement;
+    if (localStorage.getItem('theme') === 'light') { html.classList.remove('dark'); themeToggleDarkIcon.classList.remove('hidden'); }
+    else { themeToggleLightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

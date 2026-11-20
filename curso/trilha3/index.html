@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trilha 3: O Produto (20%) | Mentes Brilhantes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .text-purple-400 { color: #7c3aed; }
+    html:not(.dark) .bg-purple-500\/20 { background-color: rgba(124, 58, 237, 0.12); }
+    html:not(.dark) .bg-purple-500\/10 { background-color: rgba(124, 58, 237, 0.08); }
+    html:not(.dark) .border-purple-500\/30 { border-color: rgba(124, 58, 237, 0.25); }
+    html:not(.dark) .bg-purple-600 { background-color: #7c3aed; }
+    html:not(.dark) .hover\:bg-purple-500:hover { background-color: #7c3aed; }
+    html:not(.dark) .hover\:bg-purple-500\/10:hover { background-color: rgba(124, 58, 237, 0.08); }
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .text-amber-400 { color: #92400e; }
+    html:not(.dark) .text-teal-400 { color: #0d9488; }
+    html:not(.dark) .text-rose-400 { color: #9f1239; }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161, 98, 7, 0.08); }
+    html:not(.dark) .border-primary\/30 { border-color: rgba(161, 98, 7, 0.2); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255, 255, 255, 0.95); }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300"><span class="text-2xl">🏆</span><span class="font-bold text-lg hidden sm:inline">Mentes Brilhantes</span></a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha1/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 transition-colors hidden sm:inline-block">Mentalidade</a>
+          <a href="../trilha2/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 transition-colors hidden sm:inline-block">Ideia</a>
+          <a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-purple-400 bg-purple-500/10"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Produto</span></a>
+          <a href="../trilha4/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 transition-colors hidden lg:inline-block">Marketing</a>
+          <a href="../trilha5/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 transition-colors hidden lg:inline-block">Vendas</a>
+          <a href="../trilha6/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 transition-colors hidden lg:inline-block">Escala</a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-br from-purple-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-4">TRILHA 3</span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">🛠️ O Produto (20%)</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">
+        Construa pouco. Lance rápido. Em 2026, vibe coding com IA derruba a barreira técnica — qualquer um pode ter MVP no ar em 30 dias. Aqui você aprende a fazer certo.
+      </p>
+      <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">4</div><div class="text-xs text-neutral-400">Módulos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">24</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">~2h</div><div class="text-xs text-neutral-400">Duração</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Prática</div><div class="text-xs text-neutral-400">Tipo</div></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-6">Navegação Rápida</h2>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <a href="modulo-3-1.html" class="bg-dark-800 rounded-xl border border-dark-600 p-5 hover:border-purple-500/30 hover:bg-purple-500/10 transition-colors">
+          <div class="text-purple-400 font-bold mb-1">3.1</div>
+          <h3 class="font-semibold mb-1">A Regra da UMA Função</h3>
+          <div class="text-xs text-neutral-500">~30 min</div>
+        </a>
+        <a href="modulo-3-2.html" class="bg-dark-800 rounded-xl border border-dark-600 p-5 hover:border-purple-500/30 hover:bg-purple-500/10 transition-colors">
+          <div class="text-purple-400 font-bold mb-1">3.2</div>
+          <h3 class="font-semibold mb-1">Vibe Coding sem Código</h3>
+          <div class="text-xs text-neutral-500">~30 min</div>
+        </a>
+        <a href="modulo-3-3.html" class="bg-dark-800 rounded-xl border border-dark-600 p-5 hover:border-purple-500/30 hover:bg-purple-500/10 transition-colors">
+          <div class="text-purple-400 font-bold mb-1">3.3</div>
+          <h3 class="font-semibold mb-1">Vibe Coding com Claude</h3>
+          <div class="text-xs text-neutral-500">~30 min</div>
+        </a>
+        <a href="modulo-3-4.html" class="bg-dark-800 rounded-xl border border-dark-600 p-5 hover:border-purple-500/30 hover:bg-purple-500/10 transition-colors">
+          <div class="text-purple-400 font-bold mb-1">3.4</div>
+          <h3 class="font-semibold mb-1">A Regra dos 30 Dias</h3>
+          <div class="text-xs text-neutral-500">~30 min</div>
+        </a>
+      </div>
+    </section>
+
+    <div class="border-t border-dark-600 my-12"></div>
+
+    <h2 class="text-2xl font-bold mb-8">Conteúdo Detalhado</h2>
+
+    <!-- M 3.1 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2"><span class="text-purple-400 font-bold">3.1</span><span class="text-xs text-neutral-500">~30 min</span></div>
+        <h3 class="text-2xl font-bold mb-2">⚙️ A Regra da UMA Função</h3>
+        <p class="text-neutral-400 text-sm">Produtos vencedores fazem UMA coisa muito bem. 50 features = morte por dispersão.</p>
+      </div>
+      <div class="divide-y divide-dark-600">
+        <div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span><span class="text-lg">📱</span><div><span class="font-medium">Cal AI: foto → calorias. Só isso.</span><span class="text-neutral-500 text-sm ml-2">- O exemplo definitivo</span></div></button><div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9"><div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Cal AI lançou com UMA única função: aperta botão, tira foto, mostra calorias. Sem dashboard, sem feed, sem social.</p></div><div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Restrição força foco. UMA função obriga você a fazer ela perfeita.</p></div><div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Streaks, dashboards e gamificação só vieram DEPOIS — quando os dados disseram o que funcionava.</p></div></div></div></div>
+        <div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span><span class="text-lg">🎚️</span><div><span class="font-medium">Por que 50 features matam</span><span class="text-neutral-500 text-sm ml-2">- A síndrome do canivete</span></div></button><div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9"><div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Cliente abre o app, vê 50 botões, não entende para que serve, fecha.</p></div><div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Mais features = mais decisões para o usuário = mais fricção = menos uso.</p></div><div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Canivete-suíço de 30 lâminas: ninguém usa para nada de sério. Bisturi: precisão cirúrgica.</p></div></div></div></div>
+        <div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span><span class="text-lg">✂️</span><div><span class="font-medium">A pergunta-corte</span><span class="text-neutral-500 text-sm ml-2">- Se sumir 80%, ainda funciona?</span></div></button><div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9"><div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Pergunta de bisturi: "se eu cortar 80% das features que pensei, o produto ainda resolve a dor central?"</p></div><div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Forçar o corte revela qual é a função-mãe. O resto é decoração.</p></div><div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Aplicar essa pergunta em qualquer ideia revela 1-2 features essenciais. O resto vem depois com dados.</p></div></div></div></div>
+        <div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span><span class="text-lg">🚫</span><div><span class="font-medium">Lista de exclusão</span><span class="text-neutral-500 text-sm ml-2">- O que NÃO entra</span></div></button><div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9"><div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Documente claramente o que NÃO entra na versão 1. Login social, dashboard, gamificação, multi-idioma — fora.</p></div><div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Lista de exclusão te protege de você mesmo. Toda vez que pensar "ah, seria bom ter X", confere a lista.</p></div><div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Versão 1 só faz a função-mãe. Versão 2 adiciona o que os usuários PEDIRAM. Versões 1 e 2 são meses diferentes.</p></div></div></div></div>
+        <div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span><span class="text-lg">⚰️</span><div><span class="font-medium">Casos negativos: produtos inchados</span><span class="text-neutral-500 text-sm ml-2">- Quando feature mata</span></div></button><div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9"><div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Produtos famosos que faliram tentando ser tudo: Google+, Yahoo Messenger versões finais, Microsoft Zune.</p></div><div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Empresas grandes morrem por inchar. Você, sem recurso, morre 10x mais rápido.</p></div><div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Cada feature adiciona custo de manutenção, suporte, decisão do usuário. Custo composto.</p></div></div></div></div>
+        <div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span><span class="text-lg">📝</span><div><span class="font-medium">Compromisso: assina sua versão minimalista</span><span class="text-neutral-500 text-sm ml-2">- Documento escrito</span></div></button><div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9"><div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Documento de 1 página: 1 função-mãe + lista de exclusão + assinatura sua.</p></div><div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Compromisso escrito é antídoto contra o "pequeno acréscimo" que aparece toda semana.</p></div><div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Você assina, fixa na parede, volta lá toda vez que sentir tentação de adicionar coisa.</p></div></div></div></div>
+      </div>
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3"><a href="modulo-3-1.html" class="px-4 py-2 text-sm bg-purple-600 hover:bg-purple-500 text-white rounded-lg transition-colors">Ver Completo</a></div>
+    </div>
+
+    <!-- M 3.2 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2"><span class="text-purple-400 font-bold">3.2</span><span class="text-xs text-neutral-500">~30 min</span></div>
+        <h3 class="text-2xl font-bold mb-2">🪄 Vibe Coding para Não-Programadores</h3>
+        <p class="text-neutral-400 text-sm">Em 2026, você descreve em português e a IA constrói. Lovable, Bolt.new, Base44 — qual usar quando.</p>
+      </div>
+      <div class="divide-y divide-dark-600">
+        <div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span><span class="text-lg">🚀</span><div><span class="font-medium">A barreira técnica caiu em 2026</span><span class="text-neutral-500 text-sm ml-2">- O contexto histórico</span></div></button><div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9"><div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Em 2024 ainda precisava saber programar. Em 2026, plataformas de IA constroem app a partir de texto em português.</p></div><div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Quem não codifica também tem chance agora. Mas a janela de vantagem é pequena.</p></div><div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Quanto mais gente entra, mais saturado. Quem age agora ainda tem vantagem; quem espera, vira commodity.</p></div></div></div></div>
+        <div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span><span class="text-lg">💜</span><div><span class="font-medium">Lovable</span><span class="text-neutral-500 text-sm ml-2">- App full-stack via chat</span></div></button><div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9"><div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Plataforma onde você descreve o app em português e ela gera frontend + backend + banco + deploy.</p></div><div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Ideal para MVP de validação rápida. Em 2 horas você tem app funcionando público para testar.</p></div><div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Quando usar: web apps, dashboards, MVPs de SaaS. Limite: customização avançada começa a precisar de dev.</p></div></div></div></div>
+        <div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span><span class="text-lg">⚡</span><div><span class="font-medium">Bolt.new</span><span class="text-neutral-500 text-sm ml-2">- Browser-based fullstack</span></div></button><div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9"><div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Editor full-stack no navegador. Prompt → app rodando, com preview ao vivo.</p></div><div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Velocidade absurda. Bom para protótipos visuais e iteração rápida em landing/web.</p></div><div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Quando usar: protótipos, landings, web tools simples. Não tão robusto para apps complexos com lógica.</p></div></div></div></div>
+        <div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span><span class="text-lg">🛠️</span><div><span class="font-medium">Base44</span><span class="text-neutral-500 text-sm ml-2">- Backend + lógica + dados</span></div></button><div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9"><div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">No-code focado em backend: lógica, dados, autenticação, integrações. Em português.</p></div><div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Para apps que precisam de regra de negócio mais complexa que landing — automações, fluxos, dados estruturados.</p></div><div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Quando usar: SaaS B2B simples, ferramentas internas, automações de processo.</p></div></div></div></div>
+        <div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span><span class="text-lg">⚠️</span><div><span class="font-medium">Limites do vibe coding</span><span class="text-neutral-500 text-sm ml-2">- Quando contratar dev</span></div></button><div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9"><div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Pontos onde IA atual ainda falha: integrações específicas, performance crítica, segurança avançada, regras de negócio muito específicas.</p></div><div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Saber os limites evita gastar 20 horas tentando algo que um dev resolve em 2.</p></div><div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Use IA para 80%. Para os 20% críticos (segurança, performance, integração específica), considere contratar pontual.</p></div></div></div></div>
+        <div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span><span class="text-lg">💰</span><div><span class="font-medium">Custos típicos</span><span class="text-neutral-500 text-sm ml-2">- Quanto esperar pagar</span></div></button><div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9"><div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Range típico para MVP em vibe coding: US$ 20-200/mês em assinaturas. Hospedagem incluída.</p></div><div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Saber o custo real evita surpresa. É barato comparado a contratar dev (R$ 8-25k/mês).</p></div><div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Free tiers existem mas têm limite. Suba para o pago quando começar a vender — antes não.</p></div></div></div></div>
+      </div>
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3"><a href="modulo-3-2.html" class="px-4 py-2 text-sm bg-purple-600 hover:bg-purple-500 text-white rounded-lg transition-colors">Ver Completo</a></div>
+    </div>
+
+    <!-- M 3.3 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2"><span class="text-purple-400 font-bold">3.3</span><span class="text-xs text-neutral-500">~30 min</span></div>
+        <h3 class="text-2xl font-bold mb-2">🤖 Vibe Coding com Claude Code</h3>
+        <p class="text-neutral-400 text-sm">Para quem programa: Claude Code é o copiloto sênior. Plan mode, workflow Git, anti-padrões.</p>
+      </div>
+      <div class="divide-y divide-dark-600">
+        <div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span><span class="text-lg">🧠</span><div><span class="font-medium">Plan mode (Shift+Tab)</span><span class="text-neutral-500 text-sm ml-2">- O diferencial do Claude Code</span></div></button><div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9"><div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Modo onde Claude pesquisa o código, lê arquivos, e devolve um PLANO antes de modificar nada.</p></div><div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Evita "IA modificou tudo errado" — você revisa o plano antes de aceitar.</p></div><div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Workflow: descreve a tarefa, Shift+Tab pra entrar em plan mode, revisa, aprova, deixa executar.</p></div></div></div></div>
+        <div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span><span class="text-lg">🔄</span><div><span class="font-medium">Workflow: pesquisa → planeja → implementa</span><span class="text-neutral-500 text-sm ml-2">- O loop ideal</span></div></button><div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9"><div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">3 fases: 1) Claude lê o código, 2) propõe plano, 3) implementa após sua aprovação.</p></div><div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Sem plano antes, IA inventa código que não casa com seu projeto. Com plano, fica preciso.</p></div><div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Tempo de pesquisa do Claude vale mais que velocidade de geração.</p></div></div></div></div>
+        <div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span><span class="text-lg">⚙️</span><div><span class="font-medium">Setup básico</span><span class="text-neutral-500 text-sm ml-2">- npm install e primeiros comandos</span></div></button><div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9"><div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Instalação: <code>npm install -g @anthropic-ai/claude-code</code>. Em qualquer projeto: <code>claude</code> e pronto.</p></div><div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Setup é trivial. A barreira para usar IA pra codar é cultural, não técnica.</p></div><div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Funciona em terminal (VS Code, Cursor, qualquer IDE). Suporte a Git, MCP, hooks.</p></div></div></div></div>
+        <div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span><span class="text-lg">🪟</span><div><span class="font-medium">Cursor e Windsurf</span><span class="text-neutral-500 text-sm ml-2">- Alternativas IDE</span></div></button><div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9"><div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">IDEs com IA integrada. Cursor (mais robusto, pago), Windsurf (free tier generoso).</p></div><div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Boas para quem prefere interface gráfica. Autocomplete contextual ajuda velocidade.</p></div><div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Claude Code (terminal) + Cursor (IDE) podem coexistir no mesmo projeto.</p></div></div></div></div>
+        <div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span><span class="text-lg">🚫</span><div><span class="font-medium">Anti-padrões</span><span class="text-neutral-500 text-sm ml-2">- Quando NÃO usar IA</span></div></button><div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9"><div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Casos onde IA atrapalha: sistemas críticos sem testes, código que precisa ser muito específico, partes que você precisa ENTENDER profundamente.</p></div><div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">"Vibe coding" sem entender o código gera dívida técnica enorme em 6 meses.</p></div><div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Use IA para 80% repetitivo. Os 20% críticos: você lê, entende, escreve.</p></div></div></div></div>
+        <div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span><span class="text-lg">🌿</span><div><span class="font-medium">Fluxo Git que funciona com IA</span><span class="text-neutral-500 text-sm ml-2">- Commits pequenos</span></div></button><div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9"><div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Commits pequenos e frequentes. Cada feature = 1 commit. IA pode te ajudar a escrever as mensagens.</p></div><div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Quando IA quebra algo, você reverte 1 commit, não a tarde inteira.</p></div><div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">git status, git diff antes de aceitar mudanças. Branch por feature. Rollback fácil.</p></div></div></div></div>
+      </div>
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3"><a href="modulo-3-3.html" class="px-4 py-2 text-sm bg-purple-600 hover:bg-purple-500 text-white rounded-lg transition-colors">Ver Completo</a></div>
+    </div>
+
+    <!-- M 3.4 -->
+    <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2"><span class="text-purple-400 font-bold">3.4</span><span class="text-xs text-neutral-500">~30 min</span></div>
+        <h3 class="text-2xl font-bold mb-2">📅 A Regra dos 30 Dias</h3>
+        <p class="text-neutral-400 text-sm">Cronograma realista de MVP. 4 semanas, ponto. Se não cabe, recorta o escopo.</p>
+      </div>
+      <div class="divide-y divide-dark-600">
+        <div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span><span class="text-lg">🗓️</span><div><span class="font-medium">Por que 30 dias?</span><span class="text-neutral-500 text-sm ml-2">- Restrição que funciona</span></div></button><div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9"><div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Limite de 4 semanas para MVP no ar. Sem exceção. Cal AI seguiu, virou US$ 100M.</p></div><div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Quanto mais tempo você tem, mais coisa inventa que ninguém pediu. Restrição força foco.</p></div><div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Se 30 dias não dão, escopo está grande demais. Corte features.</p></div></div></div></div>
+        <div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span><span class="text-lg">1️⃣</span><div><span class="font-medium">Semana 1: Validar e planejar</span><span class="text-neutral-500 text-sm ml-2">- 7 dias de campo</span></div></button><div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9"><div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">10 conversas reais (Trilha 2), frase de 1 linha pública, lista de exclusão assinada.</p></div><div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Sem essa base, você constrói no escuro nas semanas 2-4 e gasta tempo errado.</p></div><div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Não pula essa semana. Quem pula, retrabalha tudo na semana 5.</p></div></div></div></div>
+        <div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span><span class="text-lg">2️⃣</span><div><span class="font-medium">Semana 2: Construir só o core</span><span class="text-neutral-500 text-sm ml-2">- A função-mãe</span></div></button><div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9"><div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">7 dias construindo APENAS a função principal. Lovable/Bolt.new se você não codifica, Claude Code se codifica.</p></div><div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">"Só mais um dia pra ajustar" mata a regra dos 30 dias. Trava no core.</p></div><div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Feio é OK. Bug pequeno é OK. Funcionalidade ausente — só se for a função-mãe.</p></div></div></div></div>
+        <div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span><span class="text-lg">3️⃣</span><div><span class="font-medium">Semana 3: Testar com 10 usuários</span><span class="text-neutral-500 text-sm ml-2">- Feedback real</span></div></button><div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9"><div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Convida 10 dos contatos da Semana 1 para usar. Observa onde travam, ouve críticas, anota tudo.</p></div><div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Aqui você descobre o que NÃO percebeu. Vale ouro.</p></div><div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Resista à tentação de "ajustar tudo." Anote. Prioriza top 3 problemas. Resto, depois.</p></div></div></div></div>
+        <div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span><span class="text-lg">4️⃣</span><div><span class="font-medium">Semana 4: Lançar e medir</span><span class="text-neutral-500 text-sm ml-2">- O ar livre</span></div></button><div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9"><div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Corrige top 3 problemas. Lança publicamente. Inicia primeiros DMs (Trilha 4).</p></div><div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">"Lançar publicamente" não é "todo mundo no Brasil viu" — é "qualquer pessoa no mundo pode acessar."</p></div><div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">A partir daqui, marketing (Trilha 4) é o motor. Produto vai melhorar com base em uso real.</p></div></div></div></div>
+        <div class="topic-item"><button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left"><span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span><span class="text-lg">📢</span><div><span class="font-medium">Como cumprir o prazo</span><span class="text-neutral-500 text-sm ml-2">- Compromisso público</span></div></button><div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9"><div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Anuncia publicamente a data de lançamento. Cria custo de não cumprir.</p></div><div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Sem compromisso público, prazo escorrega. Com compromisso, vira identidade.</p></div><div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Posta no LinkedIn, no grupo, na comunidade inema.vip. "Lanço dia X." Pronto, agora você tem que entregar.</p></div></div></div></div>
+      </div>
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3"><a href="modulo-3-4.html" class="px-4 py-2 text-sm bg-purple-600 hover:bg-purple-500 text-white rounded-lg transition-colors">Ver Completo</a></div>
+    </div>
+
+    <section class="my-12">
+      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 text-center">
+        <h3 class="text-xl font-bold mb-2 flex items-center justify-center"><span class="mr-2">⚡</span> Vai começar a regra dos 30 dias?</h3>
+        <p class="text-neutral-300 mb-4">Anuncia o D-Day na comunidade. Os outros membros viram seu accountability.</p>
+        <a href="https://inema.vip" target="_blank" class="inline-block px-6 py-3 bg-primary text-dark-900 rounded-lg font-bold hover:bg-yellow-300 transition-colors">Entrar na comunidade inema.vip →</a>
+      </div>
+    </section>
+
+    <section class="flex flex-col sm:flex-row gap-4">
+      <a href="../trilha2/index.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Trilha 2 (Ideia)</a>
+      <a href="../trilha4/index.html" class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors">Próxima: Trilha 4 (Marketing) →</a>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-dark-600 py-8 mt-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+      <p class="mb-2">Mentes Brilhantes • A Fórmula 1-20-79 • 2026</p>
+      <p><a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a> • <a href="https://inema.vip" target="_blank" class="text-primary hover:text-yellow-300">Comunidade inema.vip</a></p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => { if (exp !== explanation) exp.classList.remove('active'); });
+      explanation.classList.toggle('active');
+    }
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const html = document.documentElement;
+    if (localStorage.getItem('theme') === 'light') { html.classList.remove('dark'); themeToggleDarkIcon.classList.remove('hidden'); }
+    else { themeToggleLightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

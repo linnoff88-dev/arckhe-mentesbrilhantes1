@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentes Brilhantes — A Fórmula 1-20-79</title>
+  <meta name="description" content="O curso para quem quer vencer de verdade. 1% ideia, 20% produto, 79% venda. Sem coachzinho, sem pílula mágica.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FACC15',
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    /* Trilha 1 - Emerald */
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5, 150, 105, 0.12); }
+    html:not(.dark) .bg-emerald-500\/10 { background-color: rgba(5, 150, 105, 0.08); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5, 150, 105, 0.25); }
+    html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5, 150, 105, 0.08); }
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; }
+    html:not(.dark) .group:hover .group-hover\:text-emerald-400 { color: #059669; }
+
+    /* Trilha 2 - Blue */
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37, 99, 235, 0.12); }
+    html:not(.dark) .bg-blue-500\/10 { background-color: rgba(37, 99, 235, 0.08); }
+    html:not(.dark) .border-blue-500\/30 { border-color: rgba(37, 99, 235, 0.25); }
+    html:not(.dark) .hover\:bg-blue-500\/10:hover { background-color: rgba(37, 99, 235, 0.08); }
+    html:not(.dark) .hover\:text-blue-400:hover { color: #2563eb; }
+    html:not(.dark) .group:hover .group-hover\:text-blue-400 { color: #2563eb; }
+
+    /* Trilha 3 - Purple */
+    html:not(.dark) .text-purple-400 { color: #7c3aed; }
+    html:not(.dark) .bg-purple-500\/20 { background-color: rgba(124, 58, 237, 0.12); }
+    html:not(.dark) .bg-purple-500\/10 { background-color: rgba(124, 58, 237, 0.08); }
+    html:not(.dark) .border-purple-500\/30 { border-color: rgba(124, 58, 237, 0.25); }
+    html:not(.dark) .hover\:bg-purple-500\/10:hover { background-color: rgba(124, 58, 237, 0.08); }
+    html:not(.dark) .hover\:text-purple-400:hover { color: #7c3aed; }
+    html:not(.dark) .group:hover .group-hover\:text-purple-400 { color: #7c3aed; }
+
+    /* Trilha 4 - Amber */
+    html:not(.dark) .text-amber-400 { color: #92400e; }
+    html:not(.dark) .bg-amber-500\/20 { background-color: rgba(217, 119, 6, 0.12); }
+    html:not(.dark) .bg-amber-500\/10 { background-color: rgba(217, 119, 6, 0.08); }
+    html:not(.dark) .border-amber-500\/30 { border-color: rgba(217, 119, 6, 0.25); }
+    html:not(.dark) .hover\:bg-amber-500\/10:hover { background-color: rgba(217, 119, 6, 0.08); }
+    html:not(.dark) .hover\:text-amber-400:hover { color: #92400e; }
+    html:not(.dark) .group:hover .group-hover\:text-amber-400 { color: #92400e; }
+
+    /* Trilha 5 - Teal */
+    html:not(.dark) .text-teal-400 { color: #0d9488; }
+    html:not(.dark) .bg-teal-500\/20 { background-color: rgba(13, 148, 136, 0.12); }
+    html:not(.dark) .bg-teal-500\/10 { background-color: rgba(13, 148, 136, 0.08); }
+    html:not(.dark) .border-teal-500\/30 { border-color: rgba(13, 148, 136, 0.25); }
+    html:not(.dark) .hover\:bg-teal-500\/10:hover { background-color: rgba(13, 148, 136, 0.08); }
+    html:not(.dark) .hover\:text-teal-400:hover { color: #0d9488; }
+    html:not(.dark) .group:hover .group-hover\:text-teal-400 { color: #0d9488; }
+
+    /* Trilha 6 - Rose */
+    html:not(.dark) .text-rose-400 { color: #9f1239; }
+    html:not(.dark) .bg-rose-500\/20 { background-color: rgba(225, 29, 72, 0.12); }
+    html:not(.dark) .bg-rose-500\/10 { background-color: rgba(225, 29, 72, 0.08); }
+    html:not(.dark) .border-rose-500\/30 { border-color: rgba(225, 29, 72, 0.25); }
+    html:not(.dark) .hover\:bg-rose-500\/10:hover { background-color: rgba(225, 29, 72, 0.08); }
+    html:not(.dark) .hover\:text-rose-400:hover { color: #9f1239; }
+    html:not(.dark) .group:hover .group-hover\:text-rose-400 { color: #9f1239; }
+
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161, 98, 7, 0.08); }
+    html:not(.dark) .bg-primary\/20 { background-color: rgba(161, 98, 7, 0.15); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161, 98, 7, 0.25); }
+    html:not(.dark) .border-primary\/30 { border-color: rgba(161, 98, 7, 0.2); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .hover\:bg-yellow-500:hover { background-color: #ca8a04; }
+    html:not(.dark) .bg-yellow-400 { background-color: #facc15; }
+
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255, 255, 255, 0.95); }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- NAVIGATION -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <div class="flex items-center space-x-4">
+          <a href="index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
+            <span class="text-2xl">🏆</span>
+            <span class="font-bold text-lg hidden sm:inline">Mentes Brilhantes</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="https://inema.vip" target="_blank" class="hidden md:inline-block px-3 py-1.5 rounded-lg text-sm font-semibold text-primary bg-primary/10 hover:bg-primary/20 transition-colors">
+            Comunidade inema.vip
+          </a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="relative overflow-hidden bg-gradient-to-br from-primary/10 via-dark-900 to-dark-800 py-20 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-block px-3 py-1 bg-primary/20 text-primary text-xs font-semibold rounded-full mb-6">
+        CURSO GRATUITO • 6 TRILHAS • 24 MÓDULOS
+      </span>
+      <h1 class="text-4xl sm:text-6xl font-bold mb-6 leading-tight">
+        <span class="text-primary">1%</span> ideia.
+        <span class="text-primary">20%</span> produto.
+        <span class="text-primary">79%</span> venda.
+      </h1>
+      <p class="text-lg sm:text-xl text-neutral-400 max-w-3xl mx-auto mb-10 leading-relaxed">
+        O curso para quem quer <strong class="text-neutral-100">vencer de verdade</strong>.
+        Sem coachzinho. Sem pílula mágica. A realidade brutal de quem constrói algo que dá certo.
+      </p>
+
+      <!-- Imagem topo -->
+      <div class="flex justify-center mb-6">
+        <img src="img/12079.png" alt="Mentalidade do Vencedor — 1% Ideia, 20% Produto, 79% Vendas" class="w-full max-w-2xl rounded-xl border border-primary/30 shadow-2xl">
+      </div>
+
+      <!-- Visual da fórmula -->
+      <div class="flex justify-center mb-10">
+        <svg viewBox="0 0 600 200" class="w-full max-w-2xl">
+          <!-- Círculo 1% -->
+          <circle cx="60" cy="100" r="20" fill="rgba(250, 204, 21, 0.15)" stroke="#FACC15" stroke-width="2"/>
+          <text x="60" y="105" text-anchor="middle" fill="#FACC15" font-size="14" font-weight="bold">1%</text>
+          <text x="60" y="150" text-anchor="middle" fill="#a3a3a3" font-size="13">Ideia</text>
+
+          <!-- Círculo 20% -->
+          <circle cx="220" cy="100" r="50" fill="rgba(250, 204, 21, 0.15)" stroke="#FACC15" stroke-width="2"/>
+          <text x="220" y="106" text-anchor="middle" fill="#FACC15" font-size="20" font-weight="bold">20%</text>
+          <text x="220" y="170" text-anchor="middle" fill="#a3a3a3" font-size="13">Produto</text>
+
+          <!-- Círculo 79% -->
+          <circle cx="460" cy="100" r="90" fill="rgba(250, 204, 21, 0.15)" stroke="#FACC15" stroke-width="3"/>
+          <text x="460" y="110" text-anchor="middle" fill="#FACC15" font-size="32" font-weight="bold">79%</text>
+          <text x="460" y="190" text-anchor="middle" fill="#a3a3a3" font-size="13">Venda + Perseverança</text>
+        </svg>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="curso/trilha1/index.html" class="px-8 py-4 bg-primary text-dark-900 rounded-lg font-bold hover:bg-yellow-300 transition-colors">
+          Começar pela Trilha 1 →
+        </a>
+        <a href="https://inema.vip" target="_blank" class="px-8 py-4 bg-dark-700 border border-dark-600 text-neutral-100 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
+          Entrar na comunidade inema.vip
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+
+    <!-- PARA QUEM É / NÃO É -->
+    <section class="mb-20">
+      <h2 class="text-3xl font-bold text-center mb-12">Pra quem é esse curso</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-8">
+          <h3 class="text-xl font-bold text-emerald-400 mb-4">✓ É pra você se</h3>
+          <ul class="space-y-3 text-neutral-300">
+            <li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">✓</span><span>Você é jovem ou está começando e tem fome de vencer</span></li>
+            <li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">✓</span><span>Já teve "ideias geniais" que não saíram do papel</span></li>
+            <li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">✓</span><span>Quer entender o jogo real, não a versão LinkedIn</span></li>
+            <li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">✓</span><span>Está disposto a fazer trabalho braçal de verdade</span></li>
+            <li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">✓</span><span>Aceita que vender é mais importante que construir</span></li>
+          </ul>
+        </div>
+        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-8">
+          <h3 class="text-xl font-bold text-red-400 mb-4">✗ Não é pra você se</h3>
+          <ul class="space-y-3 text-neutral-300">
+            <li class="flex items-start space-x-2"><span class="text-red-400 mt-1">✗</span><span>Você procura uma pílula mágica de enriquecimento</span></li>
+            <li class="flex items-start space-x-2"><span class="text-red-400 mt-1">✗</span><span>Acha que "ideia genial = sucesso garantido"</span></li>
+            <li class="flex items-start space-x-2"><span class="text-red-400 mt-1">✗</span><span>Quer apenas motivação, não execução</span></li>
+            <li class="flex items-start space-x-2"><span class="text-red-400 mt-1">✗</span><span>Não aceita ouvir verdades desconfortáveis</span></li>
+            <li class="flex items-start space-x-2"><span class="text-red-400 mt-1">✗</span><span>Espera ficar rico em 30 dias</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- AS 6 TRILHAS -->
+    <section class="mb-20">
+      <h2 class="text-3xl font-bold text-center mb-4">As 6 Trilhas</h2>
+      <p class="text-center text-neutral-400 mb-12 max-w-2xl mx-auto">
+        A própria proporção de cada trilha espelha a fórmula. A maior parte do curso é sobre vender e persistir — porque é aí que está 79% do jogo.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- T1 Mentalidade -->
+        <a href="curso/trilha1/index.html" class="group bg-dark-800 rounded-xl border border-dark-600 p-6 hover:border-emerald-500/30 hover:bg-emerald-500/10 transition-colors">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-3xl">🧠</span>
+            <span class="text-xs px-2 py-1 bg-emerald-500/20 text-emerald-400 rounded-full font-semibold">TRILHA 1</span>
+          </div>
+          <h3 class="text-xl font-bold mb-2 group-hover:text-emerald-400 transition-colors">Mentalidade do Vencedor</h3>
+          <p class="text-sm text-neutral-400 mb-4">A trilha que ninguém quer fazer mas todos precisam. Quebrar mitos antes de tentar.</p>
+          <div class="text-xs text-neutral-500">4 módulos • Base obrigatória</div>
+        </a>
+
+        <!-- T2 Ideia -->
+        <a href="curso/trilha2/index.html" class="group bg-dark-800 rounded-xl border border-dark-600 p-6 hover:border-blue-500/30 hover:bg-blue-500/10 transition-colors">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-3xl">💡</span>
+            <span class="text-xs px-2 py-1 bg-blue-500/20 text-blue-400 rounded-full font-semibold">TRILHA 2</span>
+          </div>
+          <h3 class="text-xl font-bold mb-2 group-hover:text-blue-400 transition-colors">A Ideia (1%)</h3>
+          <p class="text-sm text-neutral-400 mb-4">Curta. Direta. Sem romance. Ideia boa = dor real + alguém que paga.</p>
+          <div class="text-xs text-neutral-500">3 módulos • Validação rápida</div>
+        </a>
+
+        <!-- T3 Produto -->
+        <a href="curso/trilha3/index.html" class="group bg-dark-800 rounded-xl border border-dark-600 p-6 hover:border-purple-500/30 hover:bg-purple-500/10 transition-colors">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-3xl">🛠️</span>
+            <span class="text-xs px-2 py-1 bg-purple-500/20 text-purple-400 rounded-full font-semibold">TRILHA 3</span>
+          </div>
+          <h3 class="text-xl font-bold mb-2 group-hover:text-purple-400 transition-colors">O Produto (20%)</h3>
+          <p class="text-sm text-neutral-400 mb-4">Construa pouco. Lance rápido. Vibe coding e a regra dos 30 dias.</p>
+          <div class="text-xs text-neutral-500">4 módulos • MVP brutal</div>
+        </a>
+
+        <!-- T4 Marketing -->
+        <a href="curso/trilha4/index.html" class="group bg-dark-800 rounded-xl border border-dark-600 p-6 hover:border-amber-500/30 hover:bg-amber-500/10 transition-colors">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-3xl">📢</span>
+            <span class="text-xs px-2 py-1 bg-amber-500/20 text-amber-400 rounded-full font-semibold">TRILHA 4</span>
+          </div>
+          <h3 class="text-xl font-bold mb-2 group-hover:text-amber-400 transition-colors">Marketing Estratégico</h3>
+          <p class="text-sm text-neutral-400 mb-4">A trilha mais importante. Aqui mora boa parte do 79%.</p>
+          <div class="text-xs text-neutral-500">6 módulos • Distribuição</div>
+        </a>
+
+        <!-- T5 Vendas/Retenção -->
+        <a href="curso/trilha5/index.html" class="group bg-dark-800 rounded-xl border border-dark-600 p-6 hover:border-teal-500/30 hover:bg-teal-500/10 transition-colors">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-3xl">💰</span>
+            <span class="text-xs px-2 py-1 bg-teal-500/20 text-teal-400 rounded-full font-semibold">TRILHA 5</span>
+          </div>
+          <h3 class="text-xl font-bold mb-2 group-hover:text-teal-400 transition-colors">Vendas e Retenção</h3>
+          <p class="text-sm text-neutral-400 mb-4">Como transformar clique em receita previsível. O ativo real.</p>
+          <div class="text-xs text-neutral-500">4 módulos • Conversão</div>
+        </a>
+
+        <!-- T6 Perseverança -->
+        <a href="curso/trilha6/index.html" class="group bg-dark-800 rounded-xl border border-dark-600 p-6 hover:border-rose-500/30 hover:bg-rose-500/10 transition-colors">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-3xl">🚀</span>
+            <span class="text-xs px-2 py-1 bg-rose-500/20 text-rose-400 rounded-full font-semibold">TRILHA 6</span>
+          </div>
+          <h3 class="text-xl font-bold mb-2 group-hover:text-rose-400 transition-colors">Perseverança e Escala</h3>
+          <p class="text-sm text-neutral-400 mb-4">A trilha que separa quem dura de quem desiste. E como vender o jogo.</p>
+          <div class="text-xs text-neutral-500">3 módulos • Longo prazo</div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- CASE CAL AI -->
+    <section class="mb-20">
+      <div class="bg-gradient-to-br from-primary/10 via-dark-800 to-dark-800 rounded-2xl border border-primary/30 p-8 sm:p-12">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <span class="inline-block px-3 py-1 bg-primary/20 text-primary text-xs font-semibold rounded-full mb-4">
+              ESTUDO DE CASO
+            </span>
+            <h2 class="text-3xl font-bold mb-4">Um jovem de 18 anos vendeu seu app por <span class="text-primary">US$ 100M</span></h2>
+            <p class="text-neutral-300 mb-4 leading-relaxed">
+              Em dezembro de 2025, um adolescente americano vendeu o Cal AI — um app que tira foto da comida e calcula calorias — por mais de US$ 100 milhões.
+              Não era ideia genial: o My Fitness Pal já existia há mais de 10 anos.
+            </p>
+            <p class="text-neutral-300 mb-6 leading-relaxed">
+              O segredo? <strong class="text-primary">Marketing. Distribuição. Persistência.</strong>
+              Ele mandava centenas de DMs por dia para criadores. Reinvestia tudo. Não parou nunca.
+            </p>
+            <p class="text-neutral-400 text-sm mb-6">
+              Esse caso atravessa o curso inteiro. Você vai entender exatamente o que ele fez certo — e o que você está fazendo errado.
+            </p>
+            <a href="case-cal-ai.html" class="inline-flex items-center px-6 py-3 bg-primary text-dark-900 rounded-lg font-bold hover:bg-yellow-300 transition-colors">
+              Ler a história completa →
+            </a>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-dark-800/60 rounded-xl border border-dark-600 p-6 text-center">
+              <div class="text-4xl font-bold text-primary mb-1">$30M</div>
+              <div class="text-xs text-neutral-400">Receita anual antes da venda</div>
+            </div>
+            <div class="bg-dark-800/60 rounded-xl border border-dark-600 p-6 text-center">
+              <div class="text-4xl font-bold text-primary mb-1">$100M+</div>
+              <div class="text-xs text-neutral-400">Valor de aquisição</div>
+            </div>
+            <div class="bg-dark-800/60 rounded-xl border border-dark-600 p-6 text-center">
+              <div class="text-4xl font-bold text-primary mb-1">1 mês</div>
+              <div class="text-xs text-neutral-400">Para construir o MVP</div>
+            </div>
+            <div class="bg-dark-800/60 rounded-xl border border-dark-600 p-6 text-center">
+              <div class="text-4xl font-bold text-primary mb-1">18 anos</div>
+              <div class="text-xs text-neutral-400">Idade do fundador</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS DO CURSO -->
+    <section class="mb-20">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 text-center">
+          <div class="text-3xl font-bold text-primary mb-1">6</div>
+          <div class="text-sm text-neutral-400">Trilhas</div>
+        </div>
+        <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 text-center">
+          <div class="text-3xl font-bold text-primary mb-1">24</div>
+          <div class="text-sm text-neutral-400">Módulos</div>
+        </div>
+        <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 text-center">
+          <div class="text-3xl font-bold text-primary mb-1">144+</div>
+          <div class="text-sm text-neutral-400">Tópicos</div>
+        </div>
+        <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 text-center">
+          <div class="text-3xl font-bold text-primary mb-1">100%</div>
+          <div class="text-sm text-neutral-400">Gratuito</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-primary/20 via-dark-800 to-dark-800 rounded-2xl border border-primary/40 p-8 sm:p-12 text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Pare de planejar. Comece a fazer.</h2>
+        <p class="text-lg text-neutral-300 mb-8 max-w-2xl mx-auto">
+          Você tem duas opções: ler mais um post no LinkedIn sobre "as 7 mentalidades do empreendedor" — ou começar a Trilha 1 agora e descobrir por que ainda não saiu do lugar.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-start sm:justify-center">
+          <a href="curso/trilha1/index.html" class="px-8 py-4 bg-primary text-dark-900 rounded-lg font-bold hover:bg-yellow-300 transition-colors">
+            Começar Trilha 1 →
+          </a>
+          <a href="https://inema.vip" target="_blank" class="px-8 py-4 bg-dark-700 border border-dark-600 text-neutral-100 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
+            Entrar na comunidade inema.vip
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-dark-600 py-8 mt-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+      <p class="mb-2">Mentes Brilhantes • A Fórmula 1-20-79 • 2026</p>
+      <p>
+        Feito por
+        <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a>
+        •
+        <a href="https://inema.vip" target="_blank" class="text-primary hover:text-yellow-300">Comunidade inema.vip</a>
+      </p>
+    </div>
+  
+<!-- inema-backlink:v1 -->
+<p style="display:block;width:100%;text-align:center;font-size:.85rem;margin:.75rem 0 0;opacity:.85"><a href="https://www.inema.club/cursos/85-mentes-brilhantes-a-formula-1-20-79/" style="color:inherit;text-decoration:underline">Ficha completa deste curso no INEMA.CLUB</a> · <a href="https://www.inema.club/aprender-inteligencia-artificial/" style="color:inherit;text-decoration:underline">Guia: como aprender inteligência artificial</a></p>
+<!-- /inema-backlink:v1 -->
+</footer>
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const html = document.documentElement;
+
+    if (localStorage.getItem('theme') === 'light') {
+      html.classList.remove('dark');
+      themeToggleDarkIcon.classList.remove('hidden');
+    } else {
+      themeToggleLightIcon.classList.remove('hidden');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2.2 Validação Brutal em 24 Horas | Mentes Brilhantes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37, 99, 235, 0.12); }
+    html:not(.dark) .bg-blue-500\/10 { background-color: rgba(37, 99, 235, 0.08); }
+    html:not(.dark) .border-blue-500\/30 { border-color: rgba(37, 99, 235, 0.25); }
+    html:not(.dark) .bg-blue-600 { background-color: #2563eb; }
+    html:not(.dark) .hover\:bg-blue-500:hover { background-color: #2563eb; }
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .bg-emerald-900\/20 { background-color: rgba(5, 150, 105, 0.08); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5, 150, 105, 0.25); }
+    html:not(.dark) .text-red-400 { color: #dc2626; }
+    html:not(.dark) .bg-red-900\/20 { background-color: rgba(220, 38, 38, 0.08); }
+    html:not(.dark) .border-red-500\/30 { border-color: rgba(220, 38, 38, 0.25); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161, 98, 7, 0.08); }
+    html:not(.dark) .border-primary\/30 { border-color: rgba(161, 98, 7, 0.2); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255, 255, 255, 0.95); }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300"><span class="text-2xl">🏆</span><span class="font-bold text-lg hidden sm:inline">Mentes Brilhantes</span></a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha1/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 transition-colors"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Mentalidade</span></a>
+          <a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Ideia</span></a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <div class="flex items-center space-x-2 text-sm text-neutral-400">
+      <a href="../../index.html" class="hover:text-blue-400">Início</a><span>/</span>
+      <a href="index.html" class="hover:text-blue-400">Trilha 2</a><span>/</span>
+      <span class="text-blue-400">Módulo 2.2</span>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MÓDULO 2.2</span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">⚡ Validação Brutal em 24 Horas</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">Antes de codar, antes de planejar, antes de gastar 1 real: valide. Em 24 horas você sabe se vale ou não. Aqui está o método.</p>
+      <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">6</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">30</div><div class="text-xs text-neutral-400">Minutos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Base</div><div class="text-xs text-neutral-400">Nível</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Prática</div><div class="text-xs text-neutral-400">Tipo</div></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- TOPICO 1 -->
+    <section class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">1</span>
+        <h2 class="text-2xl font-bold">📞 10 Conversas em 24 Horas</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">A validação mais rápida e mais barata do mundo: <strong class="text-blue-400">10 conversas reais com gente do seu público em 1 dia</strong>. Não é "pesquisa de mercado", não é Google Forms — é WhatsApp, ligação, café. Vai te dar mais clareza que 100 horas de pesquisa.</p>
+
+      <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">📋</span> Como achar as 10 pessoas</h3>
+        <ul class="space-y-2 text-neutral-300">
+          <li>• Sua agenda de WhatsApp tem provavelmente 200 contatos. 10 deles batem com seu público.</li>
+          <li>• Grupos de WhatsApp/Telegram do nicho — DM direto.</li>
+          <li>• LinkedIn: busque por cargo, peça 15 min de conversa.</li>
+          <li>• Comentaristas dos vídeos do YouTube do nicho.</li>
+          <li>• Fóruns/comunidades onde seu público se reúne.</li>
+        </ul>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">⚡</span> Posicionamento da conversa</h3>
+        <p class="text-neutral-300 mb-3">Você NÃO está vendendo. Está pesquisando. Comece com:</p>
+        <p class="text-neutral-300 italic mb-3">"Estou explorando uma ideia sobre [problema X]. Você tem 15 minutos pra eu te fazer umas perguntas? Sem nada para vender."</p>
+        <p class="text-neutral-300">9 em 10 pessoas aceitam. Adoram opinar.</p>
+      </div>
+    </section>
+
+    <!-- TOPICO 2 -->
+    <section class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">2</span>
+        <h2 class="text-2xl font-bold">❓ Perguntas de Ouro vs Perguntas Inúteis</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">A maioria das entrevistas de validação falha porque as perguntas são <strong class="text-red-400">hipotéticas</strong>. "Você compraria?" "Você usaria?" "Acha legal?" — todo mundo diz sim. Pergunta hipotética, resposta hipotética. Você precisa perguntar sobre <strong class="text-emerald-400">comportamento passado</strong>.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+          <h4 class="font-bold text-emerald-400 mb-4">✓ Perguntas de ouro</h4>
+          <ul class="space-y-3 text-neutral-300 text-sm">
+            <li>• "Quando foi a última vez que você teve esse problema?"</li>
+            <li>• "O que você fez para resolver?"</li>
+            <li>• "Quanto tempo perdeu com isso?"</li>
+            <li>• "Você já pagou alguma coisa para tentar resolver? Quanto?"</li>
+            <li>• "Por que essa solução não funcionou pra você?"</li>
+            <li>• "Quem você acha que tem esse problema também?"</li>
+          </ul>
+        </div>
+        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+          <h4 class="font-bold text-red-400 mb-4">✗ Perguntas inúteis</h4>
+          <ul class="space-y-3 text-neutral-300 text-sm">
+            <li>• "Você compraria um app que faz X?"</li>
+            <li>• "Acha que isso é uma boa ideia?"</li>
+            <li>• "Você usaria isso?"</li>
+            <li>• "Pagaria R$ Y por isso?"</li>
+            <li>• "Acha que tem mercado pra isso?"</li>
+            <li>• "Conhece outras pessoas que fariam isso?"</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">🎯</span> A regra dos 5 porquês</h3>
+        <p class="text-neutral-300">Quando achar uma dor, pergunte "por quê?" 5 vezes. Cada porquê desenterra uma camada mais profunda. A 5ª camada geralmente é onde mora a dor real — e o produto que vai resolver ela.</p>
+      </div>
+    </section>
+
+    <!-- TOPICO 3 -->
+    <section class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">3</span>
+        <h2 class="text-2xl font-bold">💳 "Compra" vs "Acha Legal"</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">O empreendedor iniciante confunde elogio com intenção de compra. <strong class="text-red-400">Não confunda</strong>. "Adorei sua ideia" significa zero. O que significa é "me reserva", "quanto custa?", "posso pagar agora?".</p>
+
+      <div class="bg-dark-800 rounded-xl border border-dark-600 p-8 mb-6">
+        <svg viewBox="0 0 600 220" class="w-full max-w-2xl mx-auto">
+          <text x="150" y="30" text-anchor="middle" fill="#34d399" font-size="14" font-weight="bold">SINAL DE COMPRA REAL</text>
+          <rect x="30" y="50" width="240" height="150" rx="12" fill="rgba(52, 211, 153, 0.08)" stroke="#34d399" stroke-width="2"/>
+          <text x="150" y="80" text-anchor="middle" fill="#a3a3a3" font-size="12">"Quanto custa?"</text>
+          <text x="150" y="105" text-anchor="middle" fill="#a3a3a3" font-size="12">"Me avisa quando lançar"</text>
+          <text x="150" y="130" text-anchor="middle" fill="#a3a3a3" font-size="12">Paga adiantado</text>
+          <text x="150" y="155" text-anchor="middle" fill="#a3a3a3" font-size="12">Indica para amigo</text>
+          <text x="150" y="185" text-anchor="middle" fill="#34d399" font-size="13" font-weight="bold">→ Avança</text>
+
+          <text x="450" y="30" text-anchor="middle" fill="#f87171" font-size="14" font-weight="bold">"ACHA LEGAL" (RUÍDO)</text>
+          <rect x="330" y="50" width="240" height="150" rx="12" fill="rgba(248, 113, 113, 0.08)" stroke="#f87171" stroke-width="2"/>
+          <text x="450" y="80" text-anchor="middle" fill="#a3a3a3" font-size="12">"Boa ideia!"</text>
+          <text x="450" y="105" text-anchor="middle" fill="#a3a3a3" font-size="12">"Você consegue!"</text>
+          <text x="450" y="130" text-anchor="middle" fill="#a3a3a3" font-size="12">"Show!"</text>
+          <text x="450" y="155" text-anchor="middle" fill="#a3a3a3" font-size="12">"Tô torcendo"</text>
+          <text x="450" y="185" text-anchor="middle" fill="#f87171" font-size="13" font-weight="bold">→ Desconfie</text>
+        </svg>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">⚡</span> Teste do Pix</h3>
+        <p class="text-neutral-300">No fim da conversa, pergunte: "Se eu te mandasse o link de pagamento agora, você compraria?" Se a pessoa hesita, é "acha legal." Se manda Pix na hora, é compra real.</p>
+      </div>
+    </section>
+
+    <!-- TOPICO 4 -->
+    <section class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">4</span>
+        <h2 class="text-2xl font-bold">🤖 Validar Com Claude Antes de Codar</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">Antes de gastar 1 hora codando, gaste 1 hora com Claude (ou outra IA boa). Ele vai te dar análise de mercado, listar concorrentes, mapear MVP, gerar perguntas de validação. Não substitui falar com cliente — mas <strong class="text-blue-400">acelera muito a preparação</strong>.</p>
+
+      <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">📋</span> Prompts úteis pra usar com Claude</h3>
+        <div class="space-y-3 text-sm">
+          <div class="bg-dark-700/50 rounded-lg p-3">
+            <p class="text-neutral-400 italic">"Liste 10 concorrentes diretos e indiretos da minha ideia: [descrição]. Inclua website, modelo de receita e crítica principal nos reviews."</p>
+          </div>
+          <div class="bg-dark-700/50 rounded-lg p-3">
+            <p class="text-neutral-400 italic">"Gera 20 perguntas de entrevista de validação para [problema X], focadas em comportamento passado, não hipotéticas."</p>
+          </div>
+          <div class="bg-dark-700/50 rounded-lg p-3">
+            <p class="text-neutral-400 italic">"Estima o tamanho de mercado (TAM/SAM/SOM) para [produto] no Brasil. Aponte fontes possíveis para validar."</p>
+          </div>
+          <div class="bg-dark-700/50 rounded-lg p-3">
+            <p class="text-neutral-400 italic">"Desenha o MVP mínimo possível pra testar [hipótese]. Só features essenciais. Sugere stack mais barata."</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> O que IA NÃO faz</h3>
+        <p class="text-neutral-300">IA não substitui conversa real. Ela te prepara melhor — mas não dá feedback de cliente real. Use IA como assistente, não como substituto da pesquisa de campo.</p>
+      </div>
+    </section>
+
+    <!-- TOPICO 5 -->
+    <section class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">5</span>
+        <h2 class="text-2xl font-bold">⚰️ Quando Matar a Ideia Rápido</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">Persistir em ideia ruim é <strong class="text-red-400">o caminho mais rápido para burnout</strong>. Aprender a matar uma ideia logo no início é uma habilidade de sobrevivência — e libera energia para a próxima, que pode ser a boa.</p>
+
+      <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">🚦</span> Sinais que dizem "mata agora"</h3>
+        <ul class="space-y-2 text-neutral-300">
+          <li>• 0 de 10 pessoas demonstram interesse de compra real</li>
+          <li>• Ninguém paga R$ 0 — você ofereceu até de graça e ninguém quer testar</li>
+          <li>• Você não consegue articular a dor em 1 frase clara</li>
+          <li>• A dor existe mas o pagador não — empresas/pessoas que sofrem não pagariam</li>
+          <li>• Concorrentes mais antigos morreram tentando algo parecido</li>
+          <li>• Você precisa "educar o mercado" antes de vender (quase sempre = mercado não existe)</li>
+        </ul>
+      </div>
+
+      <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-3 flex items-center"><span class="mr-2">✓</span> Matar não é desistir</h3>
+        <p class="text-neutral-300">Matar uma ideia é proteção da sua energia. As 10 conversas que você fez te ensinaram MUITO sobre o público. Use esse aprendizado para iterar para uma ideia adjacente — geralmente 1 ou 2 perguntas mais profundas e você acha algo que vale.</p>
+      </div>
+    </section>
+
+    <!-- TOPICO 6 -->
+    <section class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">6</span>
+        <h2 class="text-2xl font-bold">🌡️ O Termômetro de Validação</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">Sem critério objetivo, você sempre acha que está "quase quente". Com termômetro, fica claro se a ideia <strong class="text-blue-400">vale continuar, pivotar ou matar</strong>.</p>
+
+      <div class="bg-dark-800 rounded-xl border border-dark-600 p-8 mb-6">
+        <svg viewBox="0 0 600 320" class="w-full max-w-md mx-auto">
+          <!-- Termômetro -->
+          <rect x="270" y="30" width="60" height="240" rx="30" fill="none" stroke="#9ca3af" stroke-width="2"/>
+          <circle cx="300" cy="290" r="40" fill="rgba(220, 38, 38, 0.4)" stroke="#dc2626" stroke-width="2"/>
+
+          <!-- FERVENDO -->
+          <rect x="271" y="50" width="58" height="40" rx="20" fill="rgba(220, 38, 38, 0.6)"/>
+          <text x="380" y="75" fill="#f87171" font-size="13" font-weight="bold">FERVENDO</text>
+          <text x="380" y="92" fill="#a3a3a3" font-size="10">Alguém te paga sem produto</text>
+
+          <!-- QUENTE -->
+          <rect x="271" y="90" width="58" height="40" fill="rgba(251, 146, 60, 0.5)"/>
+          <text x="380" y="115" fill="#fb923c" font-size="13" font-weight="bold">QUENTE</text>
+          <text x="380" y="132" fill="#a3a3a3" font-size="10">3+ pediram pra reservar</text>
+
+          <!-- MORNO -->
+          <rect x="271" y="130" width="58" height="40" fill="rgba(250, 204, 21, 0.4)"/>
+          <text x="380" y="155" fill="#FACC15" font-size="13" font-weight="bold">MORNO</text>
+          <text x="380" y="172" fill="#a3a3a3" font-size="10">Interesse mas sem compromisso</text>
+
+          <!-- FRIO -->
+          <rect x="271" y="170" width="58" height="40" fill="rgba(96, 165, 250, 0.3)"/>
+          <text x="380" y="195" fill="#60a5fa" font-size="13" font-weight="bold">FRIO</text>
+          <text x="380" y="212" fill="#a3a3a3" font-size="10">"Acha legal", sem ação</text>
+
+          <!-- GELADO -->
+          <rect x="271" y="210" width="58" height="40" fill="rgba(165, 180, 252, 0.2)"/>
+          <text x="380" y="235" fill="#a5b4fc" font-size="13" font-weight="bold">GELADO</text>
+          <text x="380" y="252" fill="#a3a3a3" font-size="10">Ninguém quer nem testar</text>
+        </svg>
+      </div>
+
+      <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">🎯</span> Como agir em cada nível</h3>
+        <ul class="space-y-2 text-neutral-300 text-sm">
+          <li>• <strong class="text-red-400">Fervendo:</strong> ACELERA. Já tem cliente pagante. Constrói o MVP rápido.</li>
+          <li>• <strong>Quente:</strong> AVANÇA. Constrói o MVP, mas com cuidado.</li>
+          <li>• <strong class="text-primary">Morno:</strong> TESTA MAIS. Faz outras 10 conversas, refina o pitch.</li>
+          <li>• <strong class="text-blue-400">Frio:</strong> PIVOTA. Dor parece existir mas pagador não. Ajusta o público ou a oferta.</li>
+          <li>• <strong>Gelado:</strong> MATA. Volta para o módulo 2.1 e procura outra dor.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- RESUMO -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-blue-900/40 via-dark-800 to-dark-800 rounded-xl border border-blue-500/30 p-8">
+        <h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">📌</span> Resumo do Módulo</h2>
+        <div class="space-y-4 mb-8">
+          <div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">10 conversas em 1 dia</strong><span class="text-neutral-400"> - método mais rápido e barato de validação</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Pergunta sobre passado, não futuro</strong><span class="text-neutral-400"> - hipotético gera respostas hipotéticas</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Compra real ≠ acha legal</strong><span class="text-neutral-400"> - faça o teste do Pix</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Use IA antes de codar</strong><span class="text-neutral-400"> - acelera prep, não substitui campo</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Aprenda a matar rápido</strong><span class="text-neutral-400"> - persistir em ideia ruim = burnout</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Use o termômetro</strong><span class="text-neutral-400"> - critério objetivo previne autoengano</span></div></div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+          <h3 class="font-semibold text-blue-400 mb-2">Próximo Módulo:</h3>
+          <p class="text-neutral-300">2.3 — A Frase de 1 Linha: cristalizar tudo em uma frase clara que vende</p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="modulo-2-1.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Anterior: 2.1</a>
+          <a href="modulo-2-3.html" class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors">Próximo: 2.3 →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 text-center">
+        <h3 class="text-xl font-bold mb-2">Vai fazer as 10 conversas hoje?</h3>
+        <p class="text-neutral-300 mb-4">Anuncia na comunidade. Volta amanhã com os achados. A galera te ajuda a interpretar.</p>
+        <a href="https://inema.vip" target="_blank" class="inline-block px-6 py-3 bg-primary text-dark-900 rounded-lg font-bold hover:bg-yellow-300 transition-colors">Entrar na comunidade inema.vip →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-dark-600 py-8 mt-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+      <p class="mb-2">Mentes Brilhantes • A Fórmula 1-20-79 • 2026</p>
+      <p><a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a> • <a href="https://inema.vip" target="_blank" class="text-primary hover:text-yellow-300">Comunidade inema.vip</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const html = document.documentElement;
+    if (localStorage.getItem('theme') === 'light') { html.classList.remove('dark'); themeToggleDarkIcon.classList.remove('hidden'); }
+    else { themeToggleLightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

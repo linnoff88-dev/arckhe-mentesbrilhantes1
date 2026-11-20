@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3.3 Vibe Coding com Claude Code | Mentes Brilhantes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; } .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; } html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; } html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; } html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; } html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .text-purple-400 { color: #7c3aed; }
+    html:not(.dark) .bg-purple-500\/20 { background-color: rgba(124, 58, 237, 0.12); }
+    html:not(.dark) .bg-purple-500\/10 { background-color: rgba(124, 58, 237, 0.08); }
+    html:not(.dark) .border-purple-500\/30 { border-color: rgba(124, 58, 237, 0.25); }
+    html:not(.dark) .bg-purple-600 { background-color: #7c3aed; }
+    html:not(.dark) .hover\:bg-purple-500:hover { background-color: #7c3aed; }
+    html:not(.dark) .text-emerald-400 { color: #059669; } html:not(.dark) .bg-emerald-900\/20 { background-color: rgba(5, 150, 105, 0.08); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5, 150, 105, 0.25); }
+    html:not(.dark) .text-red-400 { color: #dc2626; } html:not(.dark) .bg-red-900\/20 { background-color: rgba(220, 38, 38, 0.08); }
+    html:not(.dark) .border-red-500\/30 { border-color: rgba(220, 38, 38, 0.25); }
+    html:not(.dark) .text-blue-400 { color: #2563eb; } html:not(.dark) .bg-blue-900\/20 { background-color: rgba(37, 99, 235, 0.08); }
+    html:not(.dark) .border-blue-500\/30 { border-color: rgba(37, 99, 235, 0.25); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; } html:not(.dark) .bg-primary\/10 { background-color: rgba(161, 98, 7, 0.08); }
+    html:not(.dark) .border-primary\/30 { border-color: rgba(161, 98, 7, 0.2); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; } html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; } html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255, 255, 255, 0.95); }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-14">
+      <div class="flex items-center space-x-4">
+        <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300"><span class="text-2xl">🏆</span><span class="font-bold text-lg hidden sm:inline">Mentes Brilhantes</span></a>
+        <span class="text-neutral-600">|</span>
+        <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+      </div>
+      <div class="flex items-center space-x-1 sm:space-x-2">
+        <a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-purple-400 bg-purple-500/10"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Produto</span></a>
+        <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+          <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+          <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+        </button>
+      </div>
+    </div></div>
+  </nav>
+
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <div class="flex items-center space-x-2 text-sm text-neutral-400">
+      <a href="../../index.html" class="hover:text-purple-400">Início</a><span>/</span>
+      <a href="index.html" class="hover:text-purple-400">Trilha 3</a><span>/</span>
+      <span class="text-purple-400">Módulo 3.3</span>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-br from-purple-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-4">MÓDULO 3.3</span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">🤖 Vibe Coding com Claude Code</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">Para quem já programa: Claude Code é como ter um copiloto sênior. Plan mode, workflow Git, anti-padrões. Aqui você aprende a multiplicar sua produtividade.</p>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <section class="mb-16">
+      <div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">1</span><h2 class="text-2xl font-bold">🧠 Plan Mode (Shift+Tab) — O Diferencial</h2></div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">A maior frustração com IA pra codar é "ela mexeu em arquivo errado e quebrou tudo". O <strong class="text-purple-400">Plan Mode</strong> resolve isso: Claude lê o código, monta um plano detalhado, e <strong class="text-purple-400">só executa depois da sua aprovação</strong>.</p>
+
+      <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">⚡</span> Como ativar</h3>
+        <ol class="space-y-2 text-neutral-300 list-decimal list-inside">
+          <li>Digita o que quer fazer ("adiciona auth com email/senha")</li>
+          <li>Aperta <strong class="text-purple-400">Shift+Tab</strong> para entrar em plan mode</li>
+          <li>Claude pesquisa o código, analisa, devolve plano</li>
+          <li>Você revisa, aprova (ou ajusta), Claude executa</li>
+        </ol>
+      </div>
+
+      <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">📊</span> Diferença que faz</h3>
+        <p class="text-neutral-300">Sem plan mode: 30% das vezes Claude mexe em coisa errada. Com plan mode: você pega problema antes da execução. Custo: 30 segundos de revisão. Benefício: horas economizadas.</p>
+      </div>
+    </section>
+
+    <section class="mb-16">
+      <div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">2</span><h2 class="text-2xl font-bold">🔄 Workflow: Pesquisa → Planeja → Implementa</h2></div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">Esse é o loop ideal. <strong class="text-purple-400">Não pula etapas</strong>. Quem pula direto para "implementa" gasta 3x mais tempo depois corrigindo.</p>
+
+      <div class="space-y-4 mb-6">
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">1</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+            <h4 class="font-semibold text-white mb-2">Pesquisa</h4>
+            <p class="text-neutral-300 text-sm">Claude lê arquivos relevantes, entende a estrutura, identifica dependências. Tempo: 30s-2min.</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">2</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+            <h4 class="font-semibold text-white mb-2">Planeja</h4>
+            <p class="text-neutral-300 text-sm">Devolve um plano: quais arquivos vai mexer, o que vai mudar, riscos. Você revisa em 30s.</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">3</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+            <h4 class="font-semibold text-white mb-2">Implementa</h4>
+            <p class="text-neutral-300 text-sm">Após aprovação, executa. Você acompanha em tempo real.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-16">
+      <div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">3</span><h2 class="text-2xl font-bold">⚙️ Setup Básico</h2></div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">Setup é trivial. A barreira para usar IA pra codar é cultural, não técnica.</p>
+
+      <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-purple-400 mb-3">Instalação (1 comando)</h3>
+        <pre class="bg-dark-700/50 rounded-lg p-3 text-sm text-emerald-400 overflow-x-auto"><code>npm install -g @anthropic-ai/claude-code</code></pre>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-purple-400 mb-3">Uso (em qualquer projeto)</h3>
+        <pre class="bg-dark-700/50 rounded-lg p-3 text-sm text-emerald-400 overflow-x-auto"><code>cd seu-projeto/
+claude</code></pre>
+        <p class="text-neutral-400 text-sm mt-3">Pronto. Conversa com Claude no terminal. Suporte a Git, MCP servers, hooks.</p>
+      </div>
+
+      <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">💡</span> Funciona com qualquer IDE</h3>
+        <p class="text-neutral-300">Claude Code roda no terminal, então combina com VS Code, Cursor, Vim, qualquer setup. Você não precisa abandonar suas ferramentas.</p>
+      </div>
+    </section>
+
+    <section class="mb-16">
+      <div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">4</span><h2 class="text-2xl font-bold">🪟 Cursor e Windsurf — Alternativas IDE</h2></div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">Para quem prefere interface gráfica em vez de terminal, existem 2 IDEs que valem conhecer.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+          <h4 class="font-bold text-purple-400 mb-3">Cursor</h4>
+          <ul class="space-y-2 text-neutral-300 text-sm">
+            <li>• IDE robusta com IA integrada</li>
+            <li>• Autocomplete contextual potente</li>
+            <li>• Pago: US$ 20/mês</li>
+            <li>• Bom para projetos grandes</li>
+          </ul>
+        </div>
+        <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+          <h4 class="font-bold text-purple-400 mb-3">Windsurf</h4>
+          <ul class="space-y-2 text-neutral-300 text-sm">
+            <li>• Free tier generoso</li>
+            <li>• Boa para iniciantes</li>
+            <li>• Codebase awareness profundo</li>
+            <li>• Ideal para começar sem investimento</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">⚡</span> Combo poderoso</h3>
+        <p class="text-neutral-300">Claude Code (terminal) + Cursor (IDE) podem coexistir. Use Cursor para edição comum, Claude Code para tarefas complexas que precisam de pesquisa profunda no código.</p>
+      </div>
+    </section>
+
+    <section class="mb-16">
+      <div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">5</span><h2 class="text-2xl font-bold">🚫 Anti-Padrões: Quando NÃO Usar IA</h2></div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">"Vibe coding" sem entender o código gera <strong class="text-red-400">dívida técnica enorme em 6 meses</strong>. Saber quando NÃO usar IA é tão importante quanto saber quando usar.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+          <h4 class="font-bold text-emerald-400 mb-4">✓ Use IA para</h4>
+          <ul class="space-y-2 text-neutral-300 text-sm">
+            <li>• CRUD repetitivo</li>
+            <li>• Telas/componentes padrão</li>
+            <li>• Refatoração simples</li>
+            <li>• Testes unitários</li>
+            <li>• Tradução de stack (ex: jQuery → React)</li>
+          </ul>
+        </div>
+        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+          <h4 class="font-bold text-red-400 mb-4">✗ NÃO use IA para</h4>
+          <ul class="space-y-2 text-neutral-300 text-sm">
+            <li>• Sistemas críticos sem testes</li>
+            <li>• Código que você precisa entender profundamente</li>
+            <li>• Lógica de negócio muito específica</li>
+            <li>• Segurança avançada</li>
+            <li>• Decisões arquiteturais</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> A regra de ouro</h3>
+        <p class="text-neutral-300">Use IA para 80% repetitivo. Os 20% críticos: você lê, entende, escreve à mão. Sem isso, em 6 meses você tem código que ninguém entende — nem você, nem Claude, nem outro dev.</p>
+      </div>
+    </section>
+
+    <section class="mb-16">
+      <div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">6</span><h2 class="text-2xl font-bold">🌿 Fluxo Git Que Funciona com IA</h2></div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">Git e IA combinam perfeitamente — desde que você siga uma regra simples: <strong class="text-purple-400">commits pequenos e frequentes</strong>. Quando IA quebra algo, você reverte 1 commit, não a tarde inteira.</p>
+
+      <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">📋</span> Workflow recomendado</h3>
+        <ol class="space-y-2 text-neutral-300 list-decimal list-inside text-sm">
+          <li>Cria branch para feature: <code class="bg-dark-700/50 px-1 rounded">git checkout -b feature/auth</code></li>
+          <li>Pede pra Claude implementar 1 coisa pequena</li>
+          <li>Revisa diff: <code class="bg-dark-700/50 px-1 rounded">git diff</code></li>
+          <li>Se OK: commit imediato com mensagem clara</li>
+          <li>Se não OK: descarta com <code class="bg-dark-700/50 px-1 rounded">git restore .</code> ou ajusta</li>
+          <li>Próxima tarefa pequena, ciclo repete</li>
+        </ol>
+      </div>
+
+      <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">⚡</span> Granularidade ideal</h3>
+        <p class="text-neutral-300">Cada commit = 1 mudança lógica. "Adicionar login com email" = 1 commit. "Adicionar reset de senha" = 1 commit. Nunca "implementei autenticação inteira" = 1 commit gigante.</p>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Mensagens de commit</h3>
+        <p class="text-neutral-300">Claude pode escrever as mensagens para você no padrão Conventional Commits (feat, fix, refactor, etc). Pede e ele faz.</p>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-purple-900/40 via-dark-800 to-dark-800 rounded-xl border border-purple-500/30 p-8">
+        <h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">📌</span> Resumo do Módulo</h2>
+        <div class="space-y-4 mb-8">
+          <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Plan Mode (Shift+Tab)</strong><span class="text-neutral-400"> - Claude planeja antes de mexer</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Workflow: pesquisa → planeja → implementa</strong><span class="text-neutral-400"> - não pula etapas</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Setup trivial</strong><span class="text-neutral-400"> - <code>npm install -g @anthropic-ai/claude-code</code></span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Cursor e Windsurf</strong><span class="text-neutral-400"> - alternativas IDE</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Use IA para 80% repetitivo</strong><span class="text-neutral-400"> - 20% crítico você escreve</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Commits pequenos</strong><span class="text-neutral-400"> - reverter ficar fácil</span></div></div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-4 mb-8"><h3 class="font-semibold text-purple-400 mb-2">Próximo Módulo:</h3><p class="text-neutral-300">3.4 — A Regra dos 30 Dias: cronograma de MVP</p></div>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="modulo-3-2.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Anterior: 3.2</a>
+          <a href="modulo-3-4.html" class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors">Próximo: 3.4 →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 text-center">
+        <h3 class="text-xl font-bold mb-2">Já está usando Claude Code?</h3>
+        <p class="text-neutral-300 mb-4">Posta seu workflow na comunidade. Compartilha truques, descobre os dos outros.</p>
+        <a href="https://inema.vip" target="_blank" class="inline-block px-6 py-3 bg-primary text-dark-900 rounded-lg font-bold hover:bg-yellow-300 transition-colors">Entrar na comunidade inema.vip →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-dark-600 py-8 mt-16"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p class="mb-2">Mentes Brilhantes • A Fórmula 1-20-79 • 2026</p><p><a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a> • <a href="https://inema.vip" target="_blank" class="text-primary hover:text-yellow-300">Comunidade inema.vip</a></p></div></footer>
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle'); const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon'); const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon'); const html = document.documentElement;
+    if (localStorage.getItem('theme') === 'light') { html.classList.remove('dark'); themeToggleDarkIcon.classList.remove('hidden'); } else { themeToggleLightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => { themeToggleDarkIcon.classList.toggle('hidden'); themeToggleLightIcon.classList.toggle('hidden'); html.classList.toggle('dark'); localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light'); });
+  </script>
+</body>
+</html>
