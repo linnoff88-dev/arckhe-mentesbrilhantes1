@@ -14,7 +14,7 @@ A maior parte do esforêÂ§o para construir algo que dêÂ¡ certo estê�
 
 ## ê°Å¸ÅÂ Acesso
 
-VersêÂ£o hospedada (GitHub Pages): https://inematds.github.io/mentesbrilhantes1/
+VersêÂ£o hospedada (GitHub Pages): https://linnoff88-dev.github.io/arckhe-/
 
 ## ê°Å¸âÅ¡ Estrutura do Curso
 
@@ -35,7 +35,7 @@ Caso **Cal AI** atravessa todas as trilhas ê¢â¬â app de calorias por 
 
 ## ê°Å¸ââ Funil
 
-Curso êÂ© gratuito e funciona como porta de entrada para a comunidade [inema.vip](https://inema.vip), onde mentores e alunos se reêÂºnem para executar o que aprendem.
+Curso êÂ© gratuito e funciona como porta de entrada para a comunidade [ARCKHÉ.vip](https://ARCKHÉ.vip), onde mentores e alunos se reêÂºnem para executar o que aprendem.
 
 ## ê°Å¸âºÂ ê¯Â¸Â Stack
 
@@ -48,19 +48,19 @@ Curso êÂ© gratuito e funciona como porta de entrada para a comunidade [inem
 
 ## ê°Å¸âÂ Design System
 
-PadrêÂ£o **INEMA.CLUB**: dark-first, cantos arredondados, ilustraêÂ§êÂµes vetoriais inline, paleta calibrada por trilha. Manual completo em `references/MASTER_COMPLETO.md` (skill `formato-curso`).
+PadrêÂ£o **ARCKHÉ AI**: dark-first, cantos arredondados, ilustraêÂ§êÂµes vetoriais inline, paleta calibrada por trilha. Manual completo em `references/MASTER_COMPLETO.md` (skill `formato-curso`).
 
 ---
 
-**Feito por** [INEMA.CLUB](https://inema.club) ê¢â¬Â¢ **Comunidade** [inema.vip](https://inema.vip)
+**Feito por** [ARCKHÉ AI](https://ARCKHÉ AI) ê¢â¬Â¢ **Comunidade** [ARCKHÉ.vip](https://ARCKHÉ.vip)
 
-<!-- inema-backlink:v1 -->
-## Mais no INEMA.CLUB
+<!-- ARCKHÉ-backlink:v1 -->
+## Mais no ARCKHÉ AI
 
-- [Ficha completa deste curso](https://www.inema.club/cursos/85-mentes-brilhantes-a-formula-1-20-79/)
-- [Guia: como aprender inteligêÂªncia artificial](https://www.inema.club/aprender-inteligencia-artificial/)
-- [Todos os cursos](https://www.inema.club/cursos/)
-<!-- /inema-backlink:v1 -->
+- [Ficha completa deste curso](https://www.ARCKHÉ AI/cursos/85-mentes-brilhantes-a-formula-1-20-79/)
+- [Guia: como aprender inteligêÂªncia artificial](https://www.ARCKHÉ AI/aprender-inteligencia-artificial/)
+- [Todos os cursos](https://www.ARCKHÉ AI/cursos/)
+<!-- /ARCKHÉ-backlink:v1 -->
 
 ---
 
